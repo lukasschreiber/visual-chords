@@ -2,30 +2,15 @@ import Soundfont from "soundfont-player";
 
 export default function PlayChord(props) {
 
+    const octave = props.octave || 4;
+
     const possibleTones = ['C', 'D', 'E', 'F', 'G', 'A', 'B'];
-    const allPossibleTrebleTones = ['A3', 'B3'].concat(...possibleTones.map(tone => tone + "4")).concat(...possibleTones.map(tone => tone + "5")).concat(...possibleTones.map(tone => tone + "6"));
-    const allPossibleBassTones = ['A2', 'B2'].concat(...possibleTones.map(tone => tone + "3")).concat(...possibleTones.map(tone => tone + "4")).concat(...possibleTones.map(tone => tone + "5"));
+    const allPossibleTones = [`A${octave-1}`, `B${octave-1}`].concat(...possibleTones.map(tone => `${tone}${octave}`)).concat(...possibleTones.map(tone => `${tone}${octave+1}`)).concat(...possibleTones.map(tone => `${tone}${octave+2}`));
 
-    const getTrebleTones = (tones) => {
+    const getTones = (tones) => {
         const vexFlowTones = [];
         let currentToneIndex = 0;
-        for (let tone of allPossibleTrebleTones) {
-            if (tone.startsWith(tones[currentToneIndex].charAt(0))) {
-                tone = tone.replace(tone.charAt(0), tones[currentToneIndex]);
-                tone = tone.replaceAll('♯', '#');
-                tone = tone.replaceAll('♭', 'b');
-                vexFlowTones.push(`${tone}`);
-                if (vexFlowTones.length === tones.length) break;
-                currentToneIndex++;
-            }
-        }
-        return vexFlowTones;
-    };
-
-    const getBassTones = (tones) => {
-        const vexFlowTones = [];
-        let currentToneIndex = 0;
-        for (let tone of allPossibleBassTones) {
+        for (let tone of allPossibleTones) {
             if (tone.startsWith(tones[currentToneIndex].charAt(0))) {
                 tone = tone.replace(tone.charAt(0), tones[currentToneIndex]);
                 tone = tone.replaceAll('♯', '#');
@@ -42,17 +27,8 @@ export default function PlayChord(props) {
         //marimba is great too https://github.com/danigb/soundfont-player
         const context = new AudioContext();
         Soundfont.instrument(context, props.instrument || 'acoustic_grand_piano').then(function (piano) {
-            let tones = props.treble ? getTrebleTones(props.tones) : getBassTones(props.tones);
+            let tones = getTones(props.tones);
             const schedule = [];
-
-            if(props.octaveShift) {
-                tones = tones.map(tone => {
-                    let tonePieces = tone.split("");
-                    let octave = Number.parseInt(tonePieces[tonePieces.length-1]);
-                    let pitch = tonePieces.slice(0,-1).join("");
-                    return `${pitch}${octave+props.octaveShift}`;
-                })
-            }
 
             if (props.sequence) {
                 schedule.push(...tones.map((tone, i) => {

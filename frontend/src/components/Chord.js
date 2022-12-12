@@ -34,30 +34,30 @@ export default function Chord(props) {
             <h3>{inversion === 0 ? "Nicht invertiert" : `${inversion}te Invertierung`}</h3>
             <h3 style={{ marginBottom: "30px" }}>{notes.join(", ")}</h3>
             <div className="notations">
-                <Notation tones={notes} treble />
-                <Notation tones={notes} bass />
+                <Notation tones={notes} />
+                <Notation tones={notes} octave={3} />
             </div>
             <Piano tones={notes} keynote={props.chord.notes[0]} />
             <div className="audio">
-                <PlayChord tones={notes} treble sequence instrument="acoustic_grand_piano" icon="piano" />
-                <PlayChord tones={notes} treble instrument="marimba" icon="xylophone" />
-                <PlayChord tones={notes} bass sequence nochord octaveShift={-1} instrument="tuba" icon="tuba" />
+                <PlayChord tones={notes} sequence instrument="acoustic_grand_piano" icon="piano" />
+                <PlayChord tones={notes} instrument="marimba" icon="xylophone" />
+                <PlayChord tones={notes} sequence nochord octave={2} instrument="tuba" icon="tuba" />
                 <PlayChord tones={notes} sequence instrument="acoustic_guitar_nylon" icon="guitar" />
                 <PlayChord tones={notes} sequence instrument="banjo" icon="banjo" />
                 <PlayChord tones={notes} sequence instrument="accordion" icon="accordion" />
-                <PlayChord tones={notes} sequence nochord octaveShift={1} instrument="clarinet" icon="clarinet" />
+                <PlayChord tones={notes} sequence nochord octave={4} instrument="clarinet" icon="clarinet" />
                 <PlayChord tones={notes} sequence instrument="sitar" icon="sitar" />
-                <PlayChord tones={notes} sequence nochord bass octaveShift={-1} instrument="bassoon" icon="bassoon" />
-                <PlayChord tones={notes} sequence nochord instrument="cello" icon="cello" />
+                <PlayChord tones={notes} sequence nochord octave={2} instrument="bassoon" icon="bassoon" />
+                <PlayChord tones={notes} sequence nochord octave={3} instrument="cello" icon="cello" />
                 <PlayChord tones={notes} sequence instrument="electric_guitar_jazz" icon="electric_guitar" />
                 <PlayChord tones={notes} sequence instrument="french_horn" icon="french_horn" />
-                <PlayChord tones={notes} sequence nochord bass octaveShift={-1} instrument="trombone" icon="trombone" />
-                <PlayChord tones={notes} sequence nochord octaveShift={1} instrument="trumpet" icon="trumpet" />
+                <PlayChord tones={notes} sequence nochord octave={3} instrument="trombone" icon="trombone" />
+                <PlayChord tones={notes} sequence nochord octave={4} instrument="trumpet" icon="trumpet" />
                 <PlayChord tones={notes} sequence instrument="harmonica" icon="harmonica" />
                 <PlayChord tones={notes} sequence instrument="orchestral_harp" icon="harp" />
                 <PlayChord tones={notes} sequence instrument="pan_flute" icon="pan_flute" />
                 <PlayChord tones={notes} sequence nochord instrument="alto_sax" icon="saxophone" />
-                <PlayChord tones={notes} treble sequence instrument="church_organ" icon="keyboard" />
+                <PlayChord tones={notes} sequence instrument="church_organ" icon="keyboard" />
             </div>
         </div>
     );
