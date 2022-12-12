@@ -1,0 +1,55 @@
+.chord {
+    grid-column: 1 / span all;
+    background: #f1f3f4;
+    border-radius: 10px;
+    padding: 30px 30px;
+    position: relative;
+}
+
+.chord h1 {
+    margin: 0;
+}
+
+.chord h3 {
+    margin: 0;
+    margin-top: 5px;
+    font-weight: normal;
+    color: rgba(0, 0, 0, .4);
+}
+
+.chord .alt {
+    color: rgba(0, 0, 0, .2);
+    font-weight: normal;
+}
+
+.chord .notations {
+    display: flex;
+}
+
+.chord .header {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+.audio {
+    display: flex;
+    flex-direction: column;
+    width: 60px;
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    gap: 10px;
+    max-height: 350px;
+    overflow-y: auto;
+}
+
+.audio::-webkit-scrollbar {
+    width: 10px;
+}
+
+.audio img {
+    height: 50px;
+    width: 50px;
+    flex-shrink: 0;
+}

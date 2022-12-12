@@ -1,0 +1,10 @@
+.search {
+    margin: 20px;
+    padding: 5px 20px;
+    background-color: #f1f3f4;
+    border-radius: 10px;
+}
+
+.comma {
+    color: gray;
+}
