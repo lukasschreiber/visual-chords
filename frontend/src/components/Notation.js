@@ -25,7 +25,6 @@ export default function Notation(props) {
         return vexFlowTones;
     };
 
-
     useEffect(() => {
         const factory = new Factory({ renderer: { elementId: containerRef.current.id, width: 180, height: 140 } });
 

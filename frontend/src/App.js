@@ -3,6 +3,7 @@ import chords from "./chords.json";
 import { useEffect, useState } from "react";
 import { LazyChordPreview } from "./components/ChordPreview";
 import Chord from "./components/Chord";
+import inverseChordIndex from "./inverseChordIndex.json"
 
 function App() {
   const [query, setQuery] = useState(null);
@@ -93,25 +94,28 @@ function App() {
     if (control === 248) return;
 
     if (control === 144) {
-      let currentNote = getNote(pitch, velocity);
+      let currentNote = getNote(pitch);
       if (velocity !== 0) {
-
         // add note
-        activeNotes.push(currentNote);
-        
-        console.log(Array.from(new Set(activeNotes)).map(n => n.name))
+        setActiveNotes(state => uniq([...state, currentNote]));
       } else {
         // remove note
-        console.log(currentNote.number, activeNotes.filter(note => note.number !== currentNote.number))
-        setActiveNotes([]);
+        setActiveNotes(state => state.filter(note => note.number !== currentNote.number));
       }
     }
   };
 
-  const getNote = (pitch, velocity) => {
+  const uniq = (array) => {
+    const seen = {};
+    return array.filter((item) => {
+      const itemKey = JSON.stringify(item);
+      return seen.hasOwnProperty(itemKey) ? false : (seen[itemKey] = true);
+    });
+  };
+
+  const getNote = (pitch) => {
     const note = {
       octave: Math.floor(pitch / 12) - 1,
-      velocity: velocity,
       number: pitch,
       frequency: Math.pow(2, (pitch - 69) / 12) * 440
     };
@@ -129,18 +133,79 @@ function App() {
     else if (pitch % 12 === 2) note.name = "D";
     else if (pitch % 12 === 1) note.name = "C#";
 
-    let octaveFromZero = Math.floor(pitch / 12);
-    if (octaveFromZero >= 4) note.longName = `${note.name.toLowerCase()}${("'").repeat(octaveFromZero - 4)}`;
-    else note.longName = `${note.name.toUpperCase()}${("'").repeat(3 - octaveFromZero)}`;
-
-    return note;
+    return {
+      number: note.number,
+      names: getAlternativeNoteNames(note.name)
+    };
   };
 
+  const getAlternativeNoteNames = (note) => {
+    switch (note) {
+      case "C": return ["C", "Dbb"];
+      case "H": return ["B", "Cb", "Ax"];
+      case "B": return ["A#", "Bb"];
+      case "A": return ["A", "Bbb", "Gx"];
+      case "G#": return ["G#", "Ab"];
+      case "G": return ["G", "Abb", "Fx"];
+      case "F#": return ["F#", "Gb"];
+      case "F": return ["F", "Gbb", "E#"];
+      case "E": return ["E", "Fb", "Dx"];
+      case "D#": return ["D#", "Eb"];
+      case "D": return ["D", "Cx", "Ebb"];
+      case "C#": return ["C#", "Db"];
+      default: return [note];
+    }
+  };
+
+  const perms = (head, tail) => {
+    const permutations = [];
+    for (let note of head) {
+      let tailPerms = null;
+      if (tail.length > 1) {
+        tailPerms = perms(tail[0], tail.slice(1));
+      } else {
+        tailPerms = [...tail[0]];
+      }
+      for (let perm of tailPerms) {
+        if (typeof perm === "string") perm = [perm];
+        permutations.push([note, ...perm]);
+      }
+    }
+    return permutations;
+  };
+
+  const getValidChords = (notes) => {
+    notes = notes.sort((a, b) => a.number-b.number).map(n => n.names);
+    const permutations = perms(notes[0], notes.slice(1));
+    const chords = [];
+    for(let permutation of permutations.map(perm => perm.join("-"))){
+      const chordNames = inverseChordIndex[permutation];
+      if(chordNames) chords.push(...chordNames);
+    }
+    return chords
+  }
+
   useEffect(() => {
-    if(!midi){
+    if (!midi) {
       navigator.requestMIDIAccess().then(onMIDISuccess, onMIDIFailure);
     }
-  }, [midi])
+  }, [midi]);
+
+  useEffect(() => {
+    //activeNotes has been updated
+    if (activeNotes.length <= 1) return;
+
+    // get all possible permutations
+    const chords = getValidChords(activeNotes);
+    if(chords.length <= 0) return;
+
+    console.log(chords);
+    let chord = chords[0];
+    let inversion = chords[0].match(/\/[0-4]/g);
+    setChord(chord);
+    setInversion(inversion ? inversion[0] : 0);
+
+  }, [activeNotes]);
 
   const presentedResult = results.length === 1 || results.filter(r => r.exactMatch).length === 1 ? (results.length === 1 ? results[0] : results.find(r => r.exactMatch)) : null;
   const restOfResults = presentedResult ? results.filter(result => result.name !== presentedResult.name) : results;
@@ -148,7 +213,7 @@ function App() {
   const handlePreviewClick = (name, inv) => {
     setChord(name);
     setInversion(inv);
-  }
+  };
 
   return (
     <div>
