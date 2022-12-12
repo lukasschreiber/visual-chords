@@ -1,4 +1,5 @@
 import Soundfont from "soundfont-player";
+import moment from "moment";
 
 export default function PlayChord(props) {
 
@@ -51,7 +52,14 @@ export default function PlayChord(props) {
                 }));
             }
 
-            piano.schedule(context.currentTime, schedule);
+            piano.on("start", (time, note, data) => {
+                if(props.onTone){
+                    setTimeout(() => {
+                        props.onTone(data.note, moment().add(data.duration, "seconds"))
+                   }, time*1000)
+                }
+            })
+            piano.schedule(context.currentTime, schedule)
         });
 
     };

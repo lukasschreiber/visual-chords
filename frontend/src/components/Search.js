@@ -6,11 +6,12 @@ import { Slate, Editable, withReact, ReactEditor, useSelected, useFocused } from
 import "./Search.css";
 
 const Regex = {
-    comma: /,/g
+    comma: /,/g,
+    inversion: /\/[0-4]/g
 };
 
 const Leaf = ({ attributes, children, leaf }) => (
-    <span className={`${leaf.modus && "modus"} ${leaf.comma && "comma"}`} {...attributes}>
+    <span className={`${leaf.inversion ? "inversion" : ""} ${leaf.comma ? "comma" : ""}`} {...attributes}>
         {children}
     </span>
 );
@@ -25,6 +26,14 @@ const decorate = ([node, path]) => {
     while ((match = Regex.comma.exec(node.text)) !== null) {
         ranges.push({
             comma: true,
+            anchor: { path, offset: match.index },
+            focus: { path, offset: match.index + match[0].length },
+        });
+    }
+
+    while ((match = Regex.inversion.exec(node.text)) !== null) {
+        ranges.push({
+            inversion: true,
             anchor: { path, offset: match.index },
             focus: { path, offset: match.index + match[0].length },
         });
@@ -143,13 +152,15 @@ export default function Search(props) {
             });
             setMode("Chord");
             insertMode(editor, "Chord");
-            Transforms.insertText(editor, props.chord);
+            const text = `${props.chord}${props.inversion && props.inversion > 0 ? `/${props.inversion}` : ""}`
+            Transforms.insertText(editor, text);
             if(props.onChange) props.onChange({
                 mode: "Chord",
-                name: props.chord
+                name: props.chord,
+                inversion: props.inversion || 0
             });
         }
-    }, [props.chord, editor]);
+    }, [props.chord, props.inversion, editor]);
 
 
     return (
@@ -176,11 +187,14 @@ export default function Search(props) {
                                 notes: e[0].children.filter(c => c.text && c.text !== "").map(c => c.text).join("").split(",").map(c => c.trim()).filter(c => c !== "")
                             });
                         } else {
-                            const name = e[0].children.filter(c => c.text && c.text !== "").map(c => c.text).join("");
-                            if (!name.includes("@")) {
+                            const text = e[0].children.filter(c => c.text && c.text !== "").map(c => c.text).join("");
+                            const inversion = text.match(/\/[0-4]/g)?.length > 0 ? Number.parseInt(text.match(/\/[0-4]/g)[0].match(/[0-4]/g)[0]) : 0;
+                            const name = text.replace(/\/[0-4]/g, "");
+                            if (!name.includes("@") && !name.endsWith("/")) {
                                 props.onChange({
                                     mode,
-                                    name: e[0].children.filter(c => c.text && c.text !== "").map(c => c.text).join("")
+                                    name: name,
+                                    inversion: inversion
                                 });
                             }
                         }

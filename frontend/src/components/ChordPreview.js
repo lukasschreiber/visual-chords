@@ -5,7 +5,7 @@ import "./ChordPreview.css";
 export default function ChordPreview(props) {
     const { inViewport, forwardedRef } = props;
     const handleClick = () => {
-        if(props.onClick) props.onClick(props.chord.name);
+        if(props.onClick) props.onClick(props.chord.name, props.chord.selectedInversion);
     }
 
     const notes = props.chord.selectedInversion !== 0 ? props.chord.inversions.find(inversion => inversion.inversion === props.chord.selectedInversion).notes : props.chord.notes;

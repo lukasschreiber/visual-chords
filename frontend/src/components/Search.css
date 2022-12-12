@@ -8,3 +8,13 @@
 .comma {
     color: gray;
 }
+
+.inversion {
+    color: #697a95;
+    background-color: #bad5ff;
+    padding: 5px 5px 4px;
+    border-radius: 7px;
+    font-size: 0.9em;
+    font-weight: 600;
+    margin: 0px 1px;
+}

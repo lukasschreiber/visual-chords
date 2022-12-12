@@ -7,7 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "crawl": "node crawl.js",
     "fetch": "node fetch.js",
-    "start": "cd frontend && npm start"
+    "start": "cd frontend && npm start",
+    "index": "node compileIndex.js",
+    "merge": "node merge.js"
   },
   "author": "",
   "type": "module",

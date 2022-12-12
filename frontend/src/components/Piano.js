@@ -1,10 +1,12 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./Piano.css";
 
 export default function Piano(props) {
     const ref = useRef();
 
-    const keys = props.tones.map(tone => tone.replaceAll('♯', 's').replaceAll('♭', 'b'));
+    const formatNote = note => note.replaceAll('♯', 's').replaceAll('#', 's').replaceAll('♭', 'b').replaceAll(/[0-9]/g, "");
+
+    const keys = props.tones.map(tone => formatNote(tone));
     useEffect(() => {
         let pianoKeys = ref.current.querySelectorAll("li");
 
@@ -18,13 +20,22 @@ export default function Piano(props) {
         for (let i = 0; i < pianoKeys.length; i++) {
             if (pianoKeys[i].classList.contains(keys[currentToneIndex])) {
                 pianoKeys[i].classList.add("active");
-                if (keys[currentToneIndex] === props.keynote) pianoKeys[i].classList.add("first");
+                if (keys[currentToneIndex] === formatNote(props.keynote)) pianoKeys[i].classList.add("first");
                 highlightedKeys++;
                 if (highlightedKeys === keys.length) break;
                 currentToneIndex++;
             }
         }
     }, [keys]);
+
+    useEffect(() => {
+        const highlightedKeys = ref.current.querySelectorAll(".active");
+        for(let key of highlightedKeys){
+            const note = props.playedNotes.find(note => key.classList.contains(formatNote(note.note)))
+            if(note) key.innerHTML = formatNote(note.note).replaceAll("ss", "𝄪").replaceAll('s', '♯').replaceAll('b', '♭');
+            if(!note) key.innerHTML = ""
+        }
+    }, [props.playedNotes])
 
     return (
         <ul className="set" ref={ref}>

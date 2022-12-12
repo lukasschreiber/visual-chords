@@ -51,6 +51,7 @@ import links from "./links.json" assert { type: 'json' };
     // replace all B with H
     let data = JSON.stringify(chords);
     fs.writeFileSync('chords.json', data);
+    console.log("Please continue to merge the duplicate chords with 'npm run merge'!")
 
     await browser.close();
 })();

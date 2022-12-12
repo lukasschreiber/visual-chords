@@ -11,7 +11,15 @@ ul {
     padding:0;
     list-style:none;
     position:relative;
-    float:left
+    float:left;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+    padding-bottom: 5px;
+    color: rgba(0, 0, 0, .3);
+    font-weight: bold;
   }
   
   ul .white {

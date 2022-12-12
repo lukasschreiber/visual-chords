@@ -8,6 +8,7 @@ function App() {
   const [query, setQuery] = useState(null);
   const [results, setResults] = useState([]);
   const [chord, setChord] = useState("");
+  const [inversion, setInversion] = useState(0);
   const [midi, setMidi] = useState(null);
   const [activeNotes, setActiveNotes] = useState([]);
 
@@ -55,7 +56,7 @@ function App() {
         setResults(res.map(r => {
           return {
             ...r,
-            selectedInversion: 0,
+            selectedInversion: query.inversion <= r.inversions.length ? query.inversion : 0,
             exactMatch: false
           };
         }));
@@ -144,14 +145,19 @@ function App() {
   const presentedResult = results.length === 1 || results.filter(r => r.exactMatch).length === 1 ? (results.length === 1 ? results[0] : results.find(r => r.exactMatch)) : null;
   const restOfResults = presentedResult ? results.filter(result => result.name !== presentedResult.name) : results;
 
+  const handlePreviewClick = (name, inv) => {
+    setChord(name);
+    setInversion(inv);
+  }
+
   return (
     <div>
-      <Search onChange={setQuery} chord={chord} />
+      <Search onChange={setQuery} chord={chord} inversion={inversion} />
 
       <div className="previewWrapper">
         {!presentedResult && restOfResults.length === 0 ? "Nothing" : ""}
         {presentedResult ? <Chord chord={presentedResult} /> : ""}
-        {restOfResults.length > 0 ? restOfResults.map(result => <LazyChordPreview chord={result} onClick={setChord} />) : ""}
+        {restOfResults.length > 0 ? restOfResults.map(result => <LazyChordPreview chord={result} onClick={handlePreviewClick} />) : ""}
       </div>
     </div>
   );
