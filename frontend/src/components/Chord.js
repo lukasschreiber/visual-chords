@@ -5,7 +5,7 @@ import Select from "react-select";
 import moment from "moment";
 
 import "./Chord.css";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Chord(props) {
     const [inversion, setInversion] = useState(props.chord.selectedInversion);
@@ -37,10 +37,10 @@ export default function Chord(props) {
                 <h1>{props.chord.name}<span className="alt">{props.chord.alternate.length > 0 ? ", " : ""} {props.chord.alternate.join(", ")}</span></h1>
             </div>
             <h3>{inversion === 0 ? "Nicht invertiert" : `${inversion}te Invertierung`}</h3>
-            <h3 style={{ marginBottom: "30px" }}>{notes.join(", ")}</h3>
+            <h3 style={{ marginBottom: "30px" }}>{notes.join(", ").replaceAll("♭♭", "𝄫")}</h3>
             <div className="notations">
                 <Notation tones={notes} />
-                <Notation tones={notes} octave={3} />
+                <Notation tones={notes} octave={notes.length > 5 ? 2 : 3} />
             </div>
             <AudioWrapper notes={notes} chord={props.chord}/>
         </div>
@@ -49,27 +49,18 @@ export default function Chord(props) {
 
 
 const AudioWrapper = (props) => {
-    const [playedNotes, setPlayedNotes] = useState([]);
-
-    const handlePlayedNote = (note, until) => {
-        const noteItem = { note };
-
-        setPlayedNotes(prevState => [...prevState, noteItem]);
-        setTimeout(() => {
-            setPlayedNotes(prevState => prevState.filter(n => n !== noteItem));
-        }, Math.abs(moment(until).subtract(moment())));
-    };
+    const pianoRef = useRef();
 
     return (
         <div>
-            <Piano tones={props.notes} keynote={props.chord.notes[0]} playedNotes={playedNotes} />
+            <Piano tones={props.notes} keynote={props.chord.notes[0]} reference={pianoRef} />
             <div className="audio">
-                <PlayChord tones={props.notes} onTone={handlePlayedNote} sequence instrument="acoustic_grand_piano" icon="piano" />
+                <PlayChord tones={props.notes} piano={pianoRef} sequence instrument="acoustic_grand_piano" icon="piano" />
                 <PlayChord tones={props.notes} instrument="marimba" icon="xylophone" />
-                <PlayChord tones={props.notes} sequence nochord octave={2} instrument="tuba" icon="tuba" />
+                <PlayChord tones={props.notes} piano={pianoRef} sequence nochord octave={2} instrument="tuba" icon="tuba" />
                 <PlayChord tones={props.notes} sequence instrument="acoustic_guitar_nylon" icon="guitar" />
                 <PlayChord tones={props.notes} sequence instrument="banjo" icon="banjo" />
-                <PlayChord tones={props.notes} onTone={handlePlayedNote} sequence instrument="accordion" icon="accordion" />
+                <PlayChord tones={props.notes} sequence instrument="accordion" icon="accordion" />
                 <PlayChord tones={props.notes} sequence nochord octave={4} instrument="clarinet" icon="clarinet" />
                 <PlayChord tones={props.notes} sequence instrument="sitar" icon="sitar" />
                 <PlayChord tones={props.notes} sequence nochord octave={2} instrument="bassoon" icon="bassoon" />
@@ -82,7 +73,7 @@ const AudioWrapper = (props) => {
                 <PlayChord tones={props.notes} sequence instrument="orchestral_harp" icon="harp" />
                 <PlayChord tones={props.notes} sequence nochord instrument="pan_flute" icon="pan_flute" />
                 <PlayChord tones={props.notes} sequence nochord instrument="alto_sax" icon="saxophone" />
-                <PlayChord tones={props.notes} onTone={handlePlayedNote} sequence instrument="church_organ" icon="keyboard" />
+                <PlayChord tones={props.notes} piano={pianoRef} sequence instrument="church_organ" icon="keyboard" />
             </div>
         </div>
     );

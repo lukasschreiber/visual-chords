@@ -1,8 +1,9 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import "./Piano.css";
 
 export default function Piano(props) {
-    const ref = useRef();
+    const ownRef = useRef();
+    const ref = props.reference || ownRef;
 
     const formatNote = note => note.replaceAll('♯', 's').replaceAll('#', 's').replaceAll('♭', 'b').replaceAll(/[0-9]/g, "");
 
@@ -28,17 +29,10 @@ export default function Piano(props) {
         }
     }, [keys]);
 
-    useEffect(() => {
-        const highlightedKeys = ref.current.querySelectorAll(".active");
-        for(let key of highlightedKeys){
-            const note = props.playedNotes.find(note => key.classList.contains(formatNote(note.note)))
-            if(note) key.innerHTML = formatNote(note.note).replaceAll("ss", "𝄪").replaceAll('s', '♯').replaceAll('b', '♭');
-            if(!note) key.innerHTML = ""
-        }
-    }, [props.playedNotes])
-
     return (
         <ul className="set" ref={ref}>
+            <li className="white G Abb Fx"></li>
+            <li className="black Gs Ab"></li>
             <li className="white A Bbb Gx"></li>
             <li className="black As Bb"></li>
             <li className="white B Cb Ax"></li>

@@ -26,7 +26,7 @@ export default function Notation(props) {
     };
 
     useEffect(() => {
-        const factory = new Factory({ renderer: { elementId: containerRef.current.id, width: 180, height: 140 } });
+        const factory = new Factory({ renderer: { elementId: containerRef.current.id, width: 180, height: 150 } });
 
         // remove old svg elements
         let children = containerRef.current.querySelectorAll("svg:not(:last-of-type)");
@@ -38,7 +38,7 @@ export default function Notation(props) {
 
         const stave = factory.Stave(0, 0, 180);
         stave.addClef(clef);
-        stave.setY(20);
+        stave.setY(30);
 
         const voice = factory.Voice({ time: { num_beats: 4, beat_value: 4 } });
 

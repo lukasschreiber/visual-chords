@@ -52,6 +52,7 @@ import links from "./links.json" assert { type: 'json' };
     let data = JSON.stringify(chords);
     fs.writeFileSync('chords.json', data);
     console.log("Please continue to merge the duplicate chords with 'npm run merge'!")
+    console.log("rename C2 to Cadd2")
 
     await browser.close();
 })();

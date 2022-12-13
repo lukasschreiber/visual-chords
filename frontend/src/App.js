@@ -12,6 +12,7 @@ function App() {
   const [inversion, setInversion] = useState(0);
   const [midi, setMidi] = useState(null);
   const [activeNotes, setActiveNotes] = useState([]);
+  const [mode, setMode] = useState("Filter");
 
   const matchesNotes = (chord, notes, exact = false) => {
     if (exact) {
@@ -20,14 +21,15 @@ function App() {
     return notes.every((note, index) => chord[index] === note);
   };
 
-  const matchesAnyName = (names, queryName) => {
+  const matchesAnyName = (names, queryName, startsWithQueryName = false) => {
     for (let name of names) {
       if (name === queryName) return true;
       name = name.replace("Major", "Dur");
       name = name.replace("Minor", "Moll");
       name = name.replace("maj", "dur");
       name = name.replace("min", "moll");
-      if (name === queryName) return true;
+      if (!startsWithQueryName && name === queryName) return true;
+      if (startsWithQueryName && name.startsWith(queryName)) return true;
     }
 
     return false;
@@ -42,6 +44,7 @@ function App() {
   useEffect(() => {
     if (query) {
       if (query.mode === "Notes" && query.notes.length > 0) {
+        setMode("Notes");
         const res = Object.values(chords).filter(chord => matchesNotes(chord.notes, query.notes) || chord.inversions.some(inversion => matchesNotes(inversion.notes, query.notes)));
         setResults(res.map(r => {
           const inversion = getInversion(r, query.notes);
@@ -53,7 +56,18 @@ function App() {
           };
         }));
       } else if (query.mode === "Chord") {
-        const res = Object.values(chords).filter(chord => matchesAnyName([...chord.alternate, chord.name], query.name));
+        setMode("Chord");
+        const res = Object.values(chords).filter(chord => matchesAnyName([...chord.alternate, chord.name], query.name, true));
+        setResults(res.map(r => {
+          return {
+            ...r,
+            selectedInversion: query.inversion <= r.inversions.length ? query.inversion : 0,
+            exactMatch: matchesAnyName([...r.alternate, r.name], query.name)
+          };
+        }));
+      } else {
+        setMode("Filter")
+        const res = Object.values(chords).filter(chord => matchesAnyName([...chord.alternate, chord.name], query.name, true));
         setResults(res.map(r => {
           return {
             ...r,
@@ -207,8 +221,15 @@ function App() {
 
   }, [activeNotes]);
 
-  const presentedResult = results.length === 1 || results.filter(r => r.exactMatch).length === 1 ? (results.length === 1 ? results[0] : results.find(r => r.exactMatch)) : null;
-  const restOfResults = presentedResult ? results.filter(result => result.name !== presentedResult.name) : results;
+  let presentedResult = null;
+  let restOfResults = results;
+
+  if(mode === "Filter"){
+    restOfResults = results;
+  }else {
+    presentedResult = (results.length === 1 || results.filter(r => r.exactMatch).length === 1) ? (results.length === 1 ? results[0] : results.find(r => r.exactMatch)) : null;
+    restOfResults = presentedResult ? results.filter(result => result.name !== presentedResult.name) : results;
+  }
 
   const handlePreviewClick = (name, inv) => {
     setChord(name);

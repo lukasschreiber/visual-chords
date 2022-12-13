@@ -1,12 +1,13 @@
 import Soundfont from "soundfont-player";
-import moment from "moment";
 
 export default function PlayChord(props) {
 
     const octave = props.octave || 4;
 
     const possibleTones = ['C', 'D', 'E', 'F', 'G', 'A', 'B'];
-    const allPossibleTones = [`A${octave-1}`, `B${octave-1}`].concat(...possibleTones.map(tone => `${tone}${octave}`)).concat(...possibleTones.map(tone => `${tone}${octave+1}`)).concat(...possibleTones.map(tone => `${tone}${octave+2}`));
+    const allPossibleTones = [`A${octave - 1}`, `B${octave - 1}`].concat(...possibleTones.map(tone => `${tone}${octave}`)).concat(...possibleTones.map(tone => `${tone}${octave + 1}`)).concat(...possibleTones.map(tone => `${tone}${octave + 2}`));
+
+    const formatNote = note => note.replaceAll('♯', 's').replaceAll('#', 's').replaceAll('♭', 'b').replaceAll(/[0-9]/g, "");
 
     const getTones = (tones) => {
         const vexFlowTones = [];
@@ -25,13 +26,15 @@ export default function PlayChord(props) {
     };
 
     const handleClick = (e) => {
-        //marimba is great too https://github.com/danigb/soundfont-player
+        //https://github.com/danigb/soundfont-player
         const context = new AudioContext();
         Soundfont.instrument(context, props.instrument || 'acoustic_grand_piano').then(function (piano) {
             let tones = getTones(props.tones);
             const schedule = [];
+            let duration = 0;
 
             if (props.sequence) {
+                duration += tones.length;
                 schedule.push(...tones.map((tone, i) => {
                     return {
                         time: i,
@@ -42,6 +45,7 @@ export default function PlayChord(props) {
             }
 
             if (!props.sequence || (props.sequence && !props.nochord)) {
+                duration += 2;
                 let lastTone = Math.max(...schedule.map(n => n.time)) || -1;
                 schedule.push(...tones.map(tone => {
                     return {
@@ -52,14 +56,47 @@ export default function PlayChord(props) {
                 }));
             }
 
+            let playedNotes = [];
+
             piano.on("start", (time, note, data) => {
-                if(props.onTone){
+                if (props.piano) {
+
+                    renderPianoKeys(time, data);
+
+                    // cleanup
                     setTimeout(() => {
-                        props.onTone(data.note, moment().add(data.duration, "seconds"))
-                   }, time*1000)
+                        props.piano.current.querySelectorAll(".active").forEach(key => key.innerHTML = "");
+                    }, duration * 1000);
                 }
-            })
-            piano.schedule(context.currentTime, schedule)
+            });
+
+            const renderPianoKeys = (time, data) => {
+                setTimeout(() => {
+                    playedNotes.push(data.note);
+                    setTimeout(() => {
+                        playedNotes = playedNotes.filter(n => n !== data.note);
+                    }, data.duration * 1000 - 50);
+
+                    const highlightedKeys = props.piano.current.querySelectorAll(".active");
+                    for (let key of highlightedKeys) {
+                        const note = playedNotes.find(note => key.classList.contains(formatNote(note)));
+                        if (note) {
+                            key.innerHTML = formatNote(note).replaceAll("ss", "𝄪").replaceAll("bb", "𝄫").replaceAll('s', '♯').replaceAll('b', '♭');
+                            key.classList.add("fade");
+                            setTimeout(() => {
+                                key.classList.remove("fade");
+                                key.classList.add("fadeout");
+                            }, data.duration * 1000 - 500);
+                            setTimeout(() => {
+                                key.classList.remove("fadeout");
+                            }, data.duration * 1000);
+                        }
+                        if (!note) key.innerHTML = "";
+                    }
+                }, time * 1000);              
+            };
+
+            piano.schedule(context.currentTime, schedule);
         });
 
     };

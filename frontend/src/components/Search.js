@@ -66,7 +66,7 @@ export default function Search(props) {
     const [search, setSearch] = useState('');
     const editor = useMemo(() => withModes(withSingleLine(withReact(createEditor()))), []);
     const renderElement = useCallback(props => <Element {...props} />, []);
-    const [mode, setMode] = useState("Chord");
+    const [mode, setMode] = useState("Filter");
     const [debounceTimer, setDebounceTimer] = useState(null);
     const [value, setValue] = useState([
         {
@@ -169,13 +169,13 @@ export default function Search(props) {
             value={value}
             onChange={(e) => {
                 setValue(e);
-                let mode = "Chord";
+                let mode = "Filter";
                 if (e[0].children.find(c => c.type === "mode")) {
                     setMode(e[0].children.find(c => c.type === "mode").character);
                     mode = e[0].children.find(c => c.type === "mode").character;
                 } else {
-                    setMode("Chord");
-                    mode = "Chord";
+                    setMode("Filter");
+                    mode = "Filter";
                 }
 
                 clearTimeout(debounceTimer);
