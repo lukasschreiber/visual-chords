@@ -1,13 +1,12 @@
 import { useEffect, useRef } from "react";
+import { formatNote, Formats } from "../helpers/formatters.js";
 import "./Piano.css";
 
 export default function Piano(props) {
     const ownRef = useRef();
     const ref = props.reference || ownRef;
 
-    const formatNote = note => note.replaceAll('♯', 's').replaceAll('#', 's').replaceAll('♭', 'b').replaceAll(/[0-9]/g, "");
-
-    const keys = props.tones.map(tone => formatNote(tone));
+    const keys = props.tones.map(tone => formatNote(tone, Formats.NORMALIZED_NO_OCTAVE));
     useEffect(() => {
         let pianoKeys = ref.current.querySelectorAll("li");
 
@@ -21,7 +20,7 @@ export default function Piano(props) {
         for (let i = 0; i < pianoKeys.length; i++) {
             if (pianoKeys[i].classList.contains(keys[currentToneIndex])) {
                 pianoKeys[i].classList.add("active");
-                if (keys[currentToneIndex] === formatNote(props.keynote)) pianoKeys[i].classList.add("first");
+                if (keys[currentToneIndex] === formatNote(props.keynote, Formats.NORMALIZED_NO_OCTAVE)) pianoKeys[i].classList.add("first");
                 highlightedKeys++;
                 if (highlightedKeys === keys.length) break;
                 currentToneIndex++;

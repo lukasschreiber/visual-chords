@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import vexflow from "vexflow";
+import { formatNote, Formats } from "../helpers/formatters.js";
 
 export default function Notation(props) {
     const containerRef = useRef();
@@ -14,9 +15,7 @@ export default function Notation(props) {
         let currentToneIndex = 0;
         for (let tone of allPossibleTones) {
             if (tone.startsWith(tones[currentToneIndex].charAt(0))) {
-                tone = tone.replace(tone.charAt(0), tones[currentToneIndex]);
-                tone = tone.replaceAll('♯', '#');
-                tone = tone.replaceAll('♭', 'b');
+                tone = formatNote(tone.replace(tone.charAt(0), tones[currentToneIndex]), Formats.STANDARD);
                 vexFlowTones.push(`${tone}`);
                 if (vexFlowTones.length === tones.length) break;
                 currentToneIndex++;

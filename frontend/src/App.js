@@ -3,7 +3,8 @@ import chords from "./chords.json";
 import { useEffect, useState } from "react";
 import { LazyChordPreview } from "./components/ChordPreview";
 import Chord from "./components/Chord";
-import inverseChordIndex from "./inverseChordIndex.json"
+import { getAlternativeNoteNames, getValidChords } from "./helpers/chords.js";
+import { compareNames, compareNotes } from "./helpers/comparators.js";
 
 function App() {
   const [query, setQuery] = useState(null);
@@ -14,30 +15,9 @@ function App() {
   const [activeNotes, setActiveNotes] = useState([]);
   const [mode, setMode] = useState("Filter");
 
-  const matchesNotes = (chord, notes, exact = false) => {
-    if (exact) {
-      return notes.every((note, index) => chord[index] === note) && notes.length === chord.length;
-    }
-    return notes.every((note, index) => chord[index] === note);
-  };
-
-  const matchesAnyName = (names, queryName, startsWithQueryName = false) => {
-    for (let name of names) {
-      if (name === queryName) return true;
-      name = name.replace("Major", "Dur");
-      name = name.replace("Minor", "Moll");
-      name = name.replace("maj", "dur");
-      name = name.replace("min", "moll");
-      if (!startsWithQueryName && name === queryName) return true;
-      if (startsWithQueryName && name.startsWith(queryName)) return true;
-    }
-
-    return false;
-  };
-
   const getInversion = (chord, notes) => {
-    if (matchesNotes(chord.notes, notes)) return 0;
-    return chord.inversions.find(inversion => matchesNotes(inversion.notes, notes)).inversion;
+    if (compareNotes(chord.notes, notes)) return 0;
+    return chord.inversions.find(inversion => compareNotes(inversion.notes, notes)).inversion;
   };
 
 
@@ -45,29 +25,29 @@ function App() {
     if (query) {
       if (query.mode === "Notes" && query.notes.length > 0) {
         setMode("Notes");
-        const res = Object.values(chords).filter(chord => matchesNotes(chord.notes, query.notes) || chord.inversions.some(inversion => matchesNotes(inversion.notes, query.notes)));
+        const res = Object.values(chords).filter(chord => compareNotes(chord.notes, query.notes) || chord.inversions.some(inversion => compareNotes(inversion.notes, query.notes)));
         setResults(res.map(r => {
           const inversion = getInversion(r, query.notes);
           const referenceNotes = inversion !== 0 ? r.inversions.find(i => i.inversion === inversion).notes : r.notes;
           return {
             ...r,
             selectedInversion: inversion,
-            exactMatch: matchesNotes(referenceNotes, query.notes, true)
+            exactMatch: compareNotes(referenceNotes, query.notes, true)
           };
         }));
       } else if (query.mode === "Chord") {
         setMode("Chord");
-        const res = Object.values(chords).filter(chord => matchesAnyName([...chord.alternate, chord.name], query.name, true));
+        const res = Object.values(chords).filter(chord => compareNames(query.name, [...chord.alternate, chord.name], true));
         setResults(res.map(r => {
           return {
             ...r,
             selectedInversion: query.inversion <= r.inversions.length ? query.inversion : 0,
-            exactMatch: matchesAnyName([...r.alternate, r.name], query.name)
+            exactMatch: compareNames(query.name, [...r.alternate, r.name])
           };
         }));
       } else {
         setMode("Filter")
-        const res = Object.values(chords).filter(chord => matchesAnyName([...chord.alternate, chord.name], query.name, true));
+        const res = Object.values(chords).filter(chord => compareNames(query.name, [...chord.alternate, chord.name], true));
         setResults(res.map(r => {
           return {
             ...r,
@@ -152,52 +132,6 @@ function App() {
       names: getAlternativeNoteNames(note.name)
     };
   };
-
-  const getAlternativeNoteNames = (note) => {
-    switch (note) {
-      case "C": return ["C", "Dbb"];
-      case "H": return ["B", "Cb", "Ax"];
-      case "B": return ["A#", "Bb"];
-      case "A": return ["A", "Bbb", "Gx"];
-      case "G#": return ["G#", "Ab"];
-      case "G": return ["G", "Abb", "Fx"];
-      case "F#": return ["F#", "Gb"];
-      case "F": return ["F", "Gbb", "E#"];
-      case "E": return ["E", "Fb", "Dx"];
-      case "D#": return ["D#", "Eb"];
-      case "D": return ["D", "Cx", "Ebb"];
-      case "C#": return ["C#", "Db"];
-      default: return [note];
-    }
-  };
-
-  const perms = (head, tail) => {
-    const permutations = [];
-    for (let note of head) {
-      let tailPerms = null;
-      if (tail.length > 1) {
-        tailPerms = perms(tail[0], tail.slice(1));
-      } else {
-        tailPerms = [...tail[0]];
-      }
-      for (let perm of tailPerms) {
-        if (typeof perm === "string") perm = [perm];
-        permutations.push([note, ...perm]);
-      }
-    }
-    return permutations;
-  };
-
-  const getValidChords = (notes) => {
-    notes = notes.sort((a, b) => a.number-b.number).map(n => n.names);
-    const permutations = perms(notes[0], notes.slice(1));
-    const chords = [];
-    for(let permutation of permutations.map(perm => perm.join("-"))){
-      const chordNames = inverseChordIndex[permutation];
-      if(chordNames) chords.push(...chordNames);
-    }
-    return chords
-  }
 
   useEffect(() => {
     if (!midi) {

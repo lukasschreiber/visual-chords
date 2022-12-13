@@ -1,4 +1,5 @@
 import Soundfont from "soundfont-player";
+import { formatNote, Formats } from "../helpers/formatters.js";
 
 export default function PlayChord(props) {
 
@@ -7,22 +8,18 @@ export default function PlayChord(props) {
     const possibleTones = ['C', 'D', 'E', 'F', 'G', 'A', 'B'];
     const allPossibleTones = [`A${octave - 1}`, `B${octave - 1}`].concat(...possibleTones.map(tone => `${tone}${octave}`)).concat(...possibleTones.map(tone => `${tone}${octave + 1}`)).concat(...possibleTones.map(tone => `${tone}${octave + 2}`));
 
-    const formatNote = note => note.replaceAll('♯', 's').replaceAll('#', 's').replaceAll('♭', 'b').replaceAll(/[0-9]/g, "");
-
     const getTones = (tones) => {
-        const vexFlowTones = [];
+        const tonesToPlay = [];
         let currentToneIndex = 0;
         for (let tone of allPossibleTones) {
             if (tone.startsWith(tones[currentToneIndex].charAt(0))) {
-                tone = tone.replace(tone.charAt(0), tones[currentToneIndex]);
-                tone = tone.replaceAll('♯', '#');
-                tone = tone.replaceAll('♭', 'b');
-                vexFlowTones.push(`${tone}`);
-                if (vexFlowTones.length === tones.length) break;
+                tone = formatNote(tone.replace(tone.charAt(0), tones[currentToneIndex]), Formats.STANDARD);
+                tonesToPlay.push(`${tone}`);
+                if (tonesToPlay.length === tones.length) break;
                 currentToneIndex++;
             }
         }
-        return vexFlowTones;
+        return tonesToPlay;
     };
 
     const handleClick = (e) => {
@@ -79,9 +76,9 @@ export default function PlayChord(props) {
 
                     const highlightedKeys = props.piano.current.querySelectorAll(".active");
                     for (let key of highlightedKeys) {
-                        const note = playedNotes.find(note => key.classList.contains(formatNote(note)));
+                        const note = playedNotes.find(note => key.classList.contains(formatNote(note, Formats.NORMALIZED_NO_OCTAVE)));
                         if (note) {
-                            key.innerHTML = formatNote(note).replaceAll("ss", "𝄪").replaceAll("bb", "𝄫").replaceAll('s', '♯').replaceAll('b', '♭');
+                            key.innerHTML = formatNote(note, Formats.MUSICAL_NO_OCTAVE);
                             key.classList.add("fade");
                             setTimeout(() => {
                                 key.classList.remove("fade");
