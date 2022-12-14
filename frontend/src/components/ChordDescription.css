@@ -1,0 +1,63 @@
+u.tooltip {
+    position: relative;
+    text-decoration-style: dotted;
+    text-decoration-thickness: 2px;
+    text-decoration-line: underline;
+    text-decoration-color: rgba(0,0,0,.2);
+}
+
+u.tooltip:after {
+    content: attr(data-tooltip);
+    max-width: 300px;
+    width: 300px;
+    position: absolute;
+    top: 140%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background: white;
+    padding: 5px 15px;
+    color: black;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    white-space: normal;
+    opacity: 0;
+    pointer-events: visible;
+    visibility: hidden;
+    /* At time of this creation, only Fx4 doing pseduo transitions */
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    z-index: 1;
+    box-shadow: 2px 2px 5px rgba(0,0,0,.2);
+}
+
+u.tooltip:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 10px 10px 10px;
+    border-color: transparent transparent white transparent;
+    /* At time of this creation, only Fx4 doing pseduo transitions */
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    opacity: 0;
+    left: 30%;
+    top: 90%;
+    z-index: 2;
+}
+
+u.tooltip:hover:after {
+    top: 110%;
+}
+
+u.tooltip:hover:before {
+    top: 70%;
+}
+
+u.tooltip:hover:after,
+u:hover:before {
+    opacity: 1;
+    visibility: visible;
+}

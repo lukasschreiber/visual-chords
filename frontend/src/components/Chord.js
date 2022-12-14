@@ -7,6 +7,7 @@ import moment from "moment";
 import "./Chord.css";
 import { useEffect, useRef, useState } from "react";
 import { formatNote, Formats } from "../helpers/formatters.js";
+import Description from "./ChordDescription";
 
 export default function Chord(props) {
     const [inversion, setInversion] = useState(props.chord.selectedInversion);
@@ -39,6 +40,7 @@ export default function Chord(props) {
                 <h1>{props.chord.name}<span className="alt">{props.chord.alternate.length > 0 ? ", " : ""} {props.chord.alternate.join(", ")}</span></h1>
             </div>
             <h3>{inversion === 0 ? "Nicht invertiert" : `${inversion}te Invertierung`}</h3>
+            <Description name={props.chord.name} keynote={props.chord.notes[0]} />
             <h3 style={{ marginBottom: "30px" }}>{notes.map(note => formatNote(note, Formats.MUSICAL_NO_OCTAVE)).join(", ")}</h3>
             <div className="notations">
                 <Notation tones={notes} />

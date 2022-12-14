@@ -35,7 +35,7 @@ export default function Piano(props) {
             <li className="white A Bbb Gx"></li>
             <li className="black As Bb"></li>
             <li className="white B Cb Ax"></li>
-            <li className="white C Dbb"></li>
+            <li className="white C Dbb Bs"></li>
             <li className="black Cs Db"></li>
             <li className="white D Cx Ebb"></li>
             <li className="black Ds Eb"></li>
@@ -47,7 +47,7 @@ export default function Piano(props) {
             <li className="white A Bbb Gx"></li>
             <li className="black As Bb"></li>
             <li className="white B Cb Ax"></li>
-            <li className="white C Dbb"></li>
+            <li className="white C Dbb Bs"></li>
             <li className="black Cs Db"></li>
             <li className="white D Cx Ebb"></li>
             <li className="black Ds Eb"></li>
