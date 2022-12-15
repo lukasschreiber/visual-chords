@@ -2,7 +2,6 @@ import Notation from "./Notation";
 import Piano from "./Piano";
 import PlayChord from "./PlayChord";
 import Select from "react-select";
-import moment from "moment";
 
 import "./Chord.css";
 import { useEffect, useRef, useState } from "react";

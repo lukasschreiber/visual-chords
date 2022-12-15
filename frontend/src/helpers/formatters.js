@@ -51,6 +51,12 @@ export const formatNote = (note, format = Formats.MUSICAL_NO_OCTAVE) => {
     }
 };
 
+export const formatChord = (chord) => {
+    chord = chord.replace("+", "⁺")
+    .replaceAll("b", "♭")
+    return chord;
+}
+
 export const formatNumber = (number, format = Formats.Number.SHORT) => {
     let flat = number.startsWith("b");
     let sharp = number.startsWith("♯");

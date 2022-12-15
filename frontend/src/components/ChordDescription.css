@@ -27,6 +27,7 @@ u.tooltip:after {
     /* At time of this creation, only Fx4 doing pseduo transitions */
     -webkit-transition: all 0.4s ease;
     -moz-transition: all 0.4s ease;
+    transition: all 0.4s ease;
     z-index: 1;
     box-shadow: 2px 2px 5px rgba(0,0,0,.2);
 }
@@ -42,6 +43,7 @@ u.tooltip:before {
     /* At time of this creation, only Fx4 doing pseduo transitions */
     -webkit-transition: all 0.4s ease;
     -moz-transition: all 0.4s ease;
+    transition: all 0.4s ease;
     opacity: 0;
     left: 30%;
     top: 90%;

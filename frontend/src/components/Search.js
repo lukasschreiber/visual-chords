@@ -7,11 +7,12 @@ import "./Search.css";
 
 const Regex = {
     comma: /,/g,
-    inversion: /\/[0-4]/g
+    inversion: /\/[0-4]/g,
+    song: /Christmas/gi
 };
 
 const Leaf = ({ attributes, children, leaf }) => (
-    <span className={`${leaf.inversion ? "inversion" : ""} ${leaf.comma ? "comma" : ""}`} {...attributes}>
+    <span className={Object.keys(Regex).filter(key => leaf.hasOwnProperty(key) && leaf[key]).join(" ")} {...attributes}>
         {children}
     </span>
 );
@@ -23,20 +24,15 @@ const decorate = ([node, path]) => {
     const ranges = [];
     let match = null;
 
-    while ((match = Regex.comma.exec(node.text)) !== null) {
-        ranges.push({
-            comma: true,
-            anchor: { path, offset: match.index },
-            focus: { path, offset: match.index + match[0].length },
-        });
-    }
-
-    while ((match = Regex.inversion.exec(node.text)) !== null) {
-        ranges.push({
-            inversion: true,
-            anchor: { path, offset: match.index },
-            focus: { path, offset: match.index + match[0].length },
-        });
+    for (let key in Regex) {
+        while ((match = Regex[key].exec(node.text)) !== null) {
+            const range = {
+                anchor: { path, offset: match.index },
+                focus: { path, offset: match.index + match[0].length },
+            };
+            range[key] = true;
+            ranges.push(range);
+        }
     }
 
     return ranges;
@@ -108,6 +104,12 @@ export default function Search(props) {
                 }
             } else {
                 // would be better with context, need to know the character before, replace strings etc - this is just temporary
+                switch (event.key) {
+                    case 'Enter':
+                        submitSearchQuery(value);
+                        break;
+                    default:
+                }
             }
 
             if (mode.includes("Notes")) {
@@ -152,15 +154,50 @@ export default function Search(props) {
             });
             setMode("Chord");
             insertMode(editor, "Chord");
-            const text = `${props.chord}${props.inversion && props.inversion > 0 ? `/${props.inversion}` : ""}`
+            const text = `${props.chord}${props.inversion && props.inversion > 0 ? `/${props.inversion}` : ""}`;
             Transforms.insertText(editor, text);
-            if(props.onChange) props.onChange({
+            if (props.onChange) props.onChange({
                 mode: "Chord",
                 name: props.chord,
                 inversion: props.inversion || 0
             });
         }
     }, [props.chord, props.inversion, editor]);
+
+    const submitSearchQuery = (content) => {
+        let mode = "Filter";
+        if (content[0].children.find(c => c.type === "mode")) {
+            setMode(content[0].children.find(c => c.type === "mode").character);
+            mode = content[0].children.find(c => c.type === "mode").character;
+        } else {
+            setMode("Filter");
+            mode = "Filter";
+        }
+
+        clearTimeout(debounceTimer);
+        setDebounceTimer(setTimeout(function () {
+            if (props.onChange) {
+                if (mode.includes("Notes")) {
+                    props.onChange({
+                        mode,
+                        notes: content[0].children.filter(c => c.text && c.text !== "").map(c => c.text).join("").split(",").map(c => c.trim()).filter(c => c !== "")
+                    });
+                } else {
+                    const text = content[0].children.filter(c => c.text && c.text !== "").map(c => c.text).join("");
+                    const inversion = text.match(/\/[0-4]/g)?.length > 0 ? Number.parseInt(text.match(/\/[0-4]/g)[0].match(/[0-4]/g)[0]) : 0;
+                    const name = text.replace(/\/[0-4]/g, "");
+                    if (!name.includes("@") && !name.endsWith("/")) {
+                        if (text.match(Regex.song)) mode = "Song";
+                        props.onChange({
+                            mode,
+                            name: name,
+                            inversion: inversion
+                        });
+                    }
+                }
+            }
+        }, 200));
+    };
 
 
     return (
@@ -169,37 +206,7 @@ export default function Search(props) {
             value={value}
             onChange={(e) => {
                 setValue(e);
-                let mode = "Filter";
-                if (e[0].children.find(c => c.type === "mode")) {
-                    setMode(e[0].children.find(c => c.type === "mode").character);
-                    mode = e[0].children.find(c => c.type === "mode").character;
-                } else {
-                    setMode("Filter");
-                    mode = "Filter";
-                }
-
-                clearTimeout(debounceTimer);
-                setDebounceTimer(setTimeout(function () {
-                    if (props.onChange) {
-                        if (mode.includes("Notes")) {
-                            props.onChange({
-                                mode,
-                                notes: e[0].children.filter(c => c.text && c.text !== "").map(c => c.text).join("").split(",").map(c => c.trim()).filter(c => c !== "")
-                            });
-                        } else {
-                            const text = e[0].children.filter(c => c.text && c.text !== "").map(c => c.text).join("");
-                            const inversion = text.match(/\/[0-4]/g)?.length > 0 ? Number.parseInt(text.match(/\/[0-4]/g)[0].match(/[0-4]/g)[0]) : 0;
-                            const name = text.replace(/\/[0-4]/g, "");
-                            if (!name.includes("@") && !name.endsWith("/")) {
-                                props.onChange({
-                                    mode,
-                                    name: name,
-                                    inversion: inversion
-                                });
-                            }
-                        }
-                    }
-                }, 200));
+                // submitSearchQuery(e)
 
                 const { selection } = editor;
 

@@ -5,6 +5,7 @@ import { LazyChordPreview } from "./components/ChordPreview";
 import Chord from "./components/Chord";
 import { getAlternativeNoteNames, getValidChords } from "./helpers/chords.js";
 import { compareNames, compareNotes } from "./helpers/comparators.js";
+import Song from "./components/song/Song";
 
 function App() {
   const [query, setQuery] = useState(null);
@@ -45,7 +46,13 @@ function App() {
             exactMatch: compareNames(query.name, [...r.alternate, r.name])
           };
         }));
-      } else {
+      } else if (query.mode === "Song") {
+        setMode("Song");
+        setResults([{
+          name: query.name,
+        }])
+
+      }else {
         setMode("Filter")
         const res = Object.values(chords).filter(chord => compareNames(query.name, [...chord.alternate, chord.name], true));
         setResults(res.map(r => {
@@ -115,8 +122,8 @@ function App() {
     };
 
     if (pitch % 12 === 0) note.name = "C";
-    else if (pitch % 12 === 11) note.name = "H";
-    else if (pitch % 12 === 10) note.name = "B";
+    else if (pitch % 12 === 11) note.name = "B";
+    else if (pitch % 12 === 10) note.name = "A#";
     else if (pitch % 12 === 9) note.name = "A";
     else if (pitch % 12 === 8) note.name = "G#";
     else if (pitch % 12 === 7) note.name = "G";
@@ -176,7 +183,7 @@ function App() {
 
       <div className="previewWrapper">
         {!presentedResult && restOfResults.length === 0 ? "Nothing" : ""}
-        {presentedResult ? <Chord chord={presentedResult} /> : ""}
+        {presentedResult ? (mode === "Song") ? <Song name={presentedResult.name} />: <Chord chord={presentedResult} /> : ""}
         {restOfResults.length > 0 ? restOfResults.map(result => <LazyChordPreview chord={result} onClick={handlePreviewClick} />) : ""}
       </div>
     </div>

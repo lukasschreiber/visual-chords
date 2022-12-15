@@ -1,0 +1,3590 @@
+{
+    "header": {
+        "numberOfTracks": 3,
+        "tempo": [
+            {
+                "microsecondsPerQuarter": 666667,
+                "secondsPerQuarter": 0.666667,
+                "ticksPerQuarter": 480,
+                "BPM": 89.9999550000225,
+                "microsecondsPerTick": 1388.8895833333333,
+                "secondsPerTick": 0.0013888895833333334
+            }
+        ]
+    },
+    "tracks": [
+        {
+            "header": {
+                "key": {
+                    "key": "G",
+                    "major": true
+                },
+                "instrument": 53
+            },
+            "events": [
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 480,
+                        "stop": 1199,
+                        "delta": 719
+                    },
+                    "note": "D5",
+                    "velocity": 80,
+                    "number": 74
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 1200,
+                        "stop": 1439,
+                        "delta": 239
+                    },
+                    "note": "C5",
+                    "velocity": 80,
+                    "number": 72
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 1440,
+                        "stop": 1679,
+                        "delta": 239
+                    },
+                    "note": "B4",
+                    "velocity": 80,
+                    "number": 71
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 1680,
+                        "stop": 1919,
+                        "delta": 239
+                    },
+                    "note": "C5",
+                    "velocity": 80,
+                    "number": 72
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 1920,
+                        "stop": 2159,
+                        "delta": 239
+                    },
+                    "note": "D5",
+                    "velocity": 80,
+                    "number": 74
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 2160,
+                        "stop": 2399,
+                        "delta": 239
+                    },
+                    "note": "B4",
+                    "velocity": 80,
+                    "number": 71
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 2400,
+                        "stop": 3119,
+                        "delta": 719
+                    },
+                    "note": "C5",
+                    "velocity": 80,
+                    "number": 72
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 3120,
+                        "stop": 3359,
+                        "delta": 239
+                    },
+                    "note": "B4",
+                    "velocity": 80,
+                    "number": 71
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 3360,
+                        "stop": 3599,
+                        "delta": 239
+                    },
+                    "note": "A4",
+                    "velocity": 80,
+                    "number": 69
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 3600,
+                        "stop": 3839,
+                        "delta": 239
+                    },
+                    "note": "B4",
+                    "velocity": 80,
+                    "number": 71
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 3840,
+                        "stop": 4079,
+                        "delta": 239
+                    },
+                    "note": "C5",
+                    "velocity": 80,
+                    "number": 72
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 4080,
+                        "stop": 4319,
+                        "delta": 239
+                    },
+                    "note": "C5",
+                    "velocity": 80,
+                    "number": 72
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 4320,
+                        "stop": 4799,
+                        "delta": 479
+                    },
+                    "note": "B4",
+                    "velocity": 80,
+                    "number": 71
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 4800,
+                        "stop": 5279,
+                        "delta": 479
+                    },
+                    "note": "D5",
+                    "velocity": 80,
+                    "number": 74
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 5280,
+                        "stop": 5759,
+                        "delta": 479
+                    },
+                    "note": "G5",
+                    "velocity": 80,
+                    "number": 79
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 5760,
+                        "stop": 6239,
+                        "delta": 479
+                    },
+                    "note": "E5",
+                    "velocity": 80,
+                    "number": 76
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 6240,
+                        "stop": 7199,
+                        "delta": 959
+                    },
+                    "note": "D5",
+                    "velocity": 80,
+                    "number": 74
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 7200,
+                        "stop": 8159,
+                        "delta": 959
+                    },
+                    "note": "D5",
+                    "velocity": 80,
+                    "number": 74
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 8160,
+                        "stop": 8639,
+                        "delta": 479
+                    },
+                    "note": "B4",
+                    "velocity": 80,
+                    "number": 71
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 8640,
+                        "stop": 9119,
+                        "delta": 479
+                    },
+                    "note": "C#5",
+                    "velocity": 80,
+                    "number": 73
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 9120,
+                        "stop": 9599,
+                        "delta": 479
+                    },
+                    "note": "D5",
+                    "velocity": 80,
+                    "number": 74
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 9600,
+                        "stop": 10079,
+                        "delta": 479
+                    },
+                    "note": "E5",
+                    "velocity": 80,
+                    "number": 76
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 10080,
+                        "stop": 10559,
+                        "delta": 479
+                    },
+                    "note": "D5",
+                    "velocity": 80,
+                    "number": 74
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 10560,
+                        "stop": 10799,
+                        "delta": 239
+                    },
+                    "note": "C#5",
+                    "velocity": 80,
+                    "number": 73
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 10800,
+                        "stop": 11039,
+                        "delta": 239
+                    },
+                    "note": "B4",
+                    "velocity": 80,
+                    "number": 71
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 11040,
+                        "stop": 11519,
+                        "delta": 479
+                    },
+                    "note": "A4",
+                    "velocity": 80,
+                    "number": 69
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 11520,
+                        "stop": 11999,
+                        "delta": 479
+                    },
+                    "note": "D4",
+                    "velocity": 80,
+                    "number": 62
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 12000,
+                        "stop": 12479,
+                        "delta": 479
+                    },
+                    "note": "A4",
+                    "velocity": 80,
+                    "number": 69
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 12480,
+                        "stop": 13439,
+                        "delta": 959
+                    },
+                    "note": "D5",
+                    "velocity": 80,
+                    "number": 74
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 13440,
+                        "stop": 13919,
+                        "delta": 479
+                    },
+                    "note": "C#5",
+                    "velocity": 80,
+                    "number": 73
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 13920,
+                        "stop": 15359,
+                        "delta": 1439
+                    },
+                    "note": "D5",
+                    "velocity": 80,
+                    "number": 74
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 15840,
+                        "stop": 16559,
+                        "delta": 719
+                    },
+                    "note": "G5",
+                    "velocity": 80,
+                    "number": 79
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 16560,
+                        "stop": 16799,
+                        "delta": 239
+                    },
+                    "note": "F#5",
+                    "velocity": 80,
+                    "number": 78
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 16800,
+                        "stop": 17039,
+                        "delta": 239
+                    },
+                    "note": "E5",
+                    "velocity": 80,
+                    "number": 76
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 17040,
+                        "stop": 17279,
+                        "delta": 239
+                    },
+                    "note": "F#5",
+                    "velocity": 80,
+                    "number": 78
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 17280,
+                        "stop": 17519,
+                        "delta": 239
+                    },
+                    "note": "G5",
+                    "velocity": 80,
+                    "number": 79
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 17520,
+                        "stop": 17759,
+                        "delta": 239
+                    },
+                    "note": "E5",
+                    "velocity": 80,
+                    "number": 76
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 17760,
+                        "stop": 18479,
+                        "delta": 719
+                    },
+                    "note": "F#5",
+                    "velocity": 80,
+                    "number": 78
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 18480,
+                        "stop": 18719,
+                        "delta": 239
+                    },
+                    "note": "E5",
+                    "velocity": 80,
+                    "number": 76
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 18720,
+                        "stop": 18959,
+                        "delta": 239
+                    },
+                    "note": "D#5",
+                    "velocity": 80,
+                    "number": 75
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 18960,
+                        "stop": 19199,
+                        "delta": 239
+                    },
+                    "note": "E5",
+                    "velocity": 80,
+                    "number": 76
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 19200,
+                        "stop": 19439,
+                        "delta": 239
+                    },
+                    "note": "F#5",
+                    "velocity": 80,
+                    "number": 78
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 19440,
+                        "stop": 19679,
+                        "delta": 239
+                    },
+                    "note": "E5",
+                    "velocity": 80,
+                    "number": 76
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 19680,
+                        "stop": 20159,
+                        "delta": 479
+                    },
+                    "note": "E5",
+                    "velocity": 80,
+                    "number": 76
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 20160,
+                        "stop": 20639,
+                        "delta": 479
+                    },
+                    "note": "B4",
+                    "velocity": 80,
+                    "number": 71
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 20640,
+                        "stop": 20879,
+                        "delta": 239
+                    },
+                    "note": "B4",
+                    "velocity": 80,
+                    "number": 71
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 20880,
+                        "stop": 21119,
+                        "delta": 239
+                    },
+                    "note": "A4",
+                    "velocity": 80,
+                    "number": 69
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 21120,
+                        "stop": 21359,
+                        "delta": 239
+                    },
+                    "note": "B4",
+                    "velocity": 80,
+                    "number": 71
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 21360,
+                        "stop": 21599,
+                        "delta": 239
+                    },
+                    "note": "C#5",
+                    "velocity": 80,
+                    "number": 73
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 21600,
+                        "stop": 22559,
+                        "delta": 959
+                    },
+                    "note": "D5",
+                    "velocity": 80,
+                    "number": 74
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 22560,
+                        "stop": 23039,
+                        "delta": 479
+                    },
+                    "note": "D5",
+                    "velocity": 80,
+                    "number": 74
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 25920,
+                        "stop": 26399,
+                        "delta": 479
+                    },
+                    "note": "D4",
+                    "velocity": 80,
+                    "number": 62
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 26400,
+                        "stop": 27839,
+                        "delta": 1439
+                    },
+                    "note": "D5",
+                    "velocity": 80,
+                    "number": 74
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 29760,
+                        "stop": 30239,
+                        "delta": 479
+                    },
+                    "note": "D4",
+                    "velocity": 80,
+                    "number": 62
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 30240,
+                        "stop": 31679,
+                        "delta": 1439
+                    },
+                    "note": "D5",
+                    "velocity": 80,
+                    "number": 74
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 31680,
+                        "stop": 32159,
+                        "delta": 479
+                    },
+                    "note": "G4",
+                    "velocity": 80,
+                    "number": 67
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 32160,
+                        "stop": 32639,
+                        "delta": 479
+                    },
+                    "note": "D5",
+                    "velocity": 80,
+                    "number": 74
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 32640,
+                        "stop": 33119,
+                        "delta": 479
+                    },
+                    "note": "E5",
+                    "velocity": 80,
+                    "number": 76
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 33120,
+                        "stop": 33359,
+                        "delta": 239
+                    },
+                    "note": "F#5",
+                    "velocity": 80,
+                    "number": 78
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 33360,
+                        "stop": 33599,
+                        "delta": 239
+                    },
+                    "note": "G5",
+                    "velocity": 80,
+                    "number": 79
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 33600,
+                        "stop": 33839,
+                        "delta": 239
+                    },
+                    "note": "F#5",
+                    "velocity": 80,
+                    "number": 78
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 33840,
+                        "stop": 34079,
+                        "delta": 239
+                    },
+                    "note": "E5",
+                    "velocity": 80,
+                    "number": 76
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 34080,
+                        "stop": 35039,
+                        "delta": 959
+                    },
+                    "note": "C5",
+                    "velocity": 80,
+                    "number": 72
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 35040,
+                        "stop": 35519,
+                        "delta": 479
+                    },
+                    "note": "D5",
+                    "velocity": 80,
+                    "number": 74
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 35520,
+                        "stop": 36479,
+                        "delta": 959
+                    },
+                    "note": "G5",
+                    "velocity": 80,
+                    "number": 79
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 36480,
+                        "stop": 36959,
+                        "delta": 479
+                    },
+                    "note": "F#5",
+                    "velocity": 80,
+                    "number": 78
+                },
+                {
+                    "type": 9,
+                    "channel": 0,
+                    "time": {
+                        "start": 36960,
+                        "stop": 38399,
+                        "delta": 1439
+                    },
+                    "note": "G5",
+                    "velocity": 80,
+                    "number": 79
+                }
+            ]
+        },
+        {
+            "header": {
+                "key": {
+                    "key": "G",
+                    "major": true
+                },
+                "instrument": 1
+            },
+            "events": [
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 0,
+                        "stop": 455,
+                        "delta": 455
+                    },
+                    "note": "D4",
+                    "velocity": 80,
+                    "number": 62
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 0,
+                        "stop": 455,
+                        "delta": 455
+                    },
+                    "note": "G4",
+                    "velocity": 80,
+                    "number": 67
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 480,
+                        "stop": 1391,
+                        "delta": 911
+                    },
+                    "note": "D4",
+                    "velocity": 80,
+                    "number": 62
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 480,
+                        "stop": 1391,
+                        "delta": 911
+                    },
+                    "note": "G4",
+                    "velocity": 80,
+                    "number": 67
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 1440,
+                        "stop": 1895,
+                        "delta": 455
+                    },
+                    "note": "D4",
+                    "velocity": 80,
+                    "number": 62
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 1920,
+                        "stop": 2375,
+                        "delta": 455
+                    },
+                    "note": "B3",
+                    "velocity": 80,
+                    "number": 59
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 1920,
+                        "stop": 2375,
+                        "delta": 455
+                    },
+                    "note": "G4",
+                    "velocity": 80,
+                    "number": 67
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 2400,
+                        "stop": 3311,
+                        "delta": 911
+                    },
+                    "note": "D4",
+                    "velocity": 80,
+                    "number": 62
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 2400,
+                        "stop": 3311,
+                        "delta": 911
+                    },
+                    "note": "A4",
+                    "velocity": 80,
+                    "number": 69
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 3360,
+                        "stop": 4271,
+                        "delta": 911
+                    },
+                    "note": "D4",
+                    "velocity": 80,
+                    "number": 62
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 4320,
+                        "stop": 4775,
+                        "delta": 455
+                    },
+                    "note": "D4",
+                    "velocity": 80,
+                    "number": 62
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 4320,
+                        "stop": 4775,
+                        "delta": 455
+                    },
+                    "note": "B4",
+                    "velocity": 80,
+                    "number": 71
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 4800,
+                        "stop": 5255,
+                        "delta": 455
+                    },
+                    "note": "D4",
+                    "velocity": 80,
+                    "number": 62
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 4800,
+                        "stop": 5255,
+                        "delta": 455
+                    },
+                    "note": "A4",
+                    "velocity": 80,
+                    "number": 69
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 5280,
+                        "stop": 5735,
+                        "delta": 455
+                    },
+                    "note": "D4",
+                    "velocity": 80,
+                    "number": 62
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 5280,
+                        "stop": 5735,
+                        "delta": 455
+                    },
+                    "note": "B4",
+                    "velocity": 80,
+                    "number": 71
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 5760,
+                        "stop": 6215,
+                        "delta": 455
+                    },
+                    "note": "E4",
+                    "velocity": 80,
+                    "number": 64
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 5760,
+                        "stop": 6215,
+                        "delta": 455
+                    },
+                    "note": "C5",
+                    "velocity": 80,
+                    "number": 72
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 6240,
+                        "stop": 7151,
+                        "delta": 911
+                    },
+                    "note": "D4",
+                    "velocity": 80,
+                    "number": 62
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 6240,
+                        "stop": 7151,
+                        "delta": 911
+                    },
+                    "note": "B4",
+                    "velocity": 80,
+                    "number": 71
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 7200,
+                        "stop": 7655,
+                        "delta": 455
+                    },
+                    "note": "D4",
+                    "velocity": 80,
+                    "number": 62
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 7200,
+                        "stop": 7655,
+                        "delta": 455
+                    },
+                    "note": "A4",
+                    "velocity": 80,
+                    "number": 69
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 7680,
+                        "stop": 8135,
+                        "delta": 455
+                    },
+                    "note": "B3",
+                    "velocity": 80,
+                    "number": 59
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 7680,
+                        "stop": 8135,
+                        "delta": 455
+                    },
+                    "note": "G4",
+                    "velocity": 80,
+                    "number": 67
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 8160,
+                        "stop": 9119,
+                        "delta": 959
+                    },
+                    "note": "G4",
+                    "velocity": 80,
+                    "number": 67
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 8160,
+                        "stop": 8639,
+                        "delta": 479
+                    },
+                    "note": "B3",
+                    "velocity": 80,
+                    "number": 59
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 8640,
+                        "stop": 9095,
+                        "delta": 455
+                    },
+                    "note": "C#4",
+                    "velocity": 80,
+                    "number": 61
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 9120,
+                        "stop": 9575,
+                        "delta": 455
+                    },
+                    "note": "D4",
+                    "velocity": 80,
+                    "number": 62
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 9120,
+                        "stop": 9575,
+                        "delta": 455
+                    },
+                    "note": "F#4",
+                    "velocity": 80,
+                    "number": 66
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 9600,
+                        "stop": 10055,
+                        "delta": 455
+                    },
+                    "note": "C#4",
+                    "velocity": 80,
+                    "number": 61
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 9600,
+                        "stop": 10055,
+                        "delta": 455
+                    },
+                    "note": "E4",
+                    "velocity": 80,
+                    "number": 64
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 10080,
+                        "stop": 10559,
+                        "delta": 479
+                    },
+                    "note": "D4",
+                    "velocity": 80,
+                    "number": 62
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 10080,
+                        "stop": 10559,
+                        "delta": 479
+                    },
+                    "note": "F#4",
+                    "velocity": 80,
+                    "number": 66
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 10560,
+                        "stop": 11015,
+                        "delta": 455
+                    },
+                    "note": "D4",
+                    "velocity": 80,
+                    "number": 62
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 10560,
+                        "stop": 11015,
+                        "delta": 455
+                    },
+                    "note": "G4",
+                    "velocity": 80,
+                    "number": 67
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 11040,
+                        "stop": 11495,
+                        "delta": 455
+                    },
+                    "note": "D4",
+                    "velocity": 80,
+                    "number": 62
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 11040,
+                        "stop": 11495,
+                        "delta": 455
+                    },
+                    "note": "A4",
+                    "velocity": 80,
+                    "number": 69
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 11520,
+                        "stop": 11975,
+                        "delta": 455
+                    },
+                    "note": "D4",
+                    "velocity": 80,
+                    "number": 62
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 11520,
+                        "stop": 11975,
+                        "delta": 455
+                    },
+                    "note": "B4",
+                    "velocity": 80,
+                    "number": 71
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 12000,
+                        "stop": 12959,
+                        "delta": 959
+                    },
+                    "note": "D4",
+                    "velocity": 80,
+                    "number": 62
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 12000,
+                        "stop": 12959,
+                        "delta": 959
+                    },
+                    "note": "F#4",
+                    "velocity": 80,
+                    "number": 66
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 12960,
+                        "stop": 13643,
+                        "delta": 683
+                    },
+                    "note": "C#4",
+                    "velocity": 80,
+                    "number": 61
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 12960,
+                        "stop": 13643,
+                        "delta": 683
+                    },
+                    "note": "E4",
+                    "velocity": 80,
+                    "number": 64
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 13680,
+                        "stop": 13907,
+                        "delta": 227
+                    },
+                    "note": "D4",
+                    "velocity": 80,
+                    "number": 62
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 13920,
+                        "stop": 15287,
+                        "delta": 1367
+                    },
+                    "note": "D4",
+                    "velocity": 80,
+                    "number": 62
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 15840,
+                        "stop": 16751,
+                        "delta": 911
+                    },
+                    "note": "D5",
+                    "velocity": 80,
+                    "number": 74
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 15840,
+                        "stop": 16751,
+                        "delta": 911
+                    },
+                    "note": "D4",
+                    "velocity": 80,
+                    "number": 62
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 16800,
+                        "stop": 17255,
+                        "delta": 455
+                    },
+                    "note": "C5",
+                    "velocity": 80,
+                    "number": 72
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 16800,
+                        "stop": 17027,
+                        "delta": 227
+                    },
+                    "note": "E4",
+                    "velocity": 80,
+                    "number": 64
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 17040,
+                        "stop": 17267,
+                        "delta": 227
+                    },
+                    "note": "F#4",
+                    "velocity": 80,
+                    "number": 66
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 17280,
+                        "stop": 17735,
+                        "delta": 455
+                    },
+                    "note": "B4",
+                    "velocity": 80,
+                    "number": 71
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 17280,
+                        "stop": 17735,
+                        "delta": 455
+                    },
+                    "note": "G4",
+                    "velocity": 80,
+                    "number": 67
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 17760,
+                        "stop": 18719,
+                        "delta": 959
+                    },
+                    "note": "C5",
+                    "velocity": 80,
+                    "number": 72
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 17760,
+                        "stop": 18239,
+                        "delta": 479
+                    },
+                    "note": "E4",
+                    "velocity": 80,
+                    "number": 64
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 18240,
+                        "stop": 18719,
+                        "delta": 479
+                    },
+                    "note": "F#4",
+                    "velocity": 80,
+                    "number": 66
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 18720,
+                        "stop": 19631,
+                        "delta": 911
+                    },
+                    "note": "B4",
+                    "velocity": 80,
+                    "number": 71
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 18720,
+                        "stop": 19631,
+                        "delta": 911
+                    },
+                    "note": "G4",
+                    "velocity": 80,
+                    "number": 67
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 19680,
+                        "stop": 20135,
+                        "delta": 455
+                    },
+                    "note": "D4",
+                    "velocity": 80,
+                    "number": 62
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 19680,
+                        "stop": 20135,
+                        "delta": 455
+                    },
+                    "note": "A4",
+                    "velocity": 80,
+                    "number": 69
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 20160,
+                        "stop": 20615,
+                        "delta": 455
+                    },
+                    "note": "D4",
+                    "velocity": 80,
+                    "number": 62
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 20160,
+                        "stop": 20615,
+                        "delta": 455
+                    },
+                    "note": "B4",
+                    "velocity": 80,
+                    "number": 71
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 20640,
+                        "stop": 21095,
+                        "delta": 455
+                    },
+                    "note": "E4",
+                    "velocity": 80,
+                    "number": 64
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 20640,
+                        "stop": 21095,
+                        "delta": 455
+                    },
+                    "note": "G4",
+                    "velocity": 80,
+                    "number": 67
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 21120,
+                        "stop": 21575,
+                        "delta": 455
+                    },
+                    "note": "E4",
+                    "velocity": 80,
+                    "number": 64
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 21120,
+                        "stop": 21575,
+                        "delta": 455
+                    },
+                    "note": "A4",
+                    "velocity": 80,
+                    "number": 69
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 21600,
+                        "stop": 22319,
+                        "delta": 719
+                    },
+                    "note": "F#4",
+                    "velocity": 80,
+                    "number": 66
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 21600,
+                        "stop": 22559,
+                        "delta": 959
+                    },
+                    "note": "D4",
+                    "velocity": 80,
+                    "number": 62
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 22320,
+                        "stop": 22547,
+                        "delta": 227
+                    },
+                    "note": "E4",
+                    "velocity": 80,
+                    "number": 64
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 22560,
+                        "stop": 23015,
+                        "delta": 455
+                    },
+                    "note": "D4",
+                    "velocity": 80,
+                    "number": 62
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 22560,
+                        "stop": 23015,
+                        "delta": 455
+                    },
+                    "note": "D4",
+                    "velocity": 80,
+                    "number": 62
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 23040,
+                        "stop": 23495,
+                        "delta": 455
+                    },
+                    "note": "G4",
+                    "velocity": 80,
+                    "number": 67
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 23040,
+                        "stop": 23495,
+                        "delta": 455
+                    },
+                    "note": "D4",
+                    "velocity": 80,
+                    "number": 62
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 23520,
+                        "stop": 23975,
+                        "delta": 455
+                    },
+                    "note": "G4",
+                    "velocity": 80,
+                    "number": 67
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 23520,
+                        "stop": 23975,
+                        "delta": 455
+                    },
+                    "note": "D4",
+                    "velocity": 80,
+                    "number": 62
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 24000,
+                        "stop": 24455,
+                        "delta": 455
+                    },
+                    "note": "F#4",
+                    "velocity": 80,
+                    "number": 66
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 24000,
+                        "stop": 24455,
+                        "delta": 455
+                    },
+                    "note": "D4",
+                    "velocity": 80,
+                    "number": 62
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 24480,
+                        "stop": 24935,
+                        "delta": 455
+                    },
+                    "note": "G4",
+                    "velocity": 80,
+                    "number": 67
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 24480,
+                        "stop": 24935,
+                        "delta": 455
+                    },
+                    "note": "D4",
+                    "velocity": 80,
+                    "number": 62
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 24960,
+                        "stop": 25415,
+                        "delta": 455
+                    },
+                    "note": "A4",
+                    "velocity": 80,
+                    "number": 69
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 24960,
+                        "stop": 25415,
+                        "delta": 455
+                    },
+                    "note": "D4",
+                    "velocity": 80,
+                    "number": 62
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 25440,
+                        "stop": 26351,
+                        "delta": 911
+                    },
+                    "note": "D4",
+                    "velocity": 80,
+                    "number": 62
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 25440,
+                        "stop": 26351,
+                        "delta": 911
+                    },
+                    "note": "G4",
+                    "velocity": 80,
+                    "number": 67
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 26400,
+                        "stop": 26855,
+                        "delta": 455
+                    },
+                    "note": "D4",
+                    "velocity": 80,
+                    "number": 62
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 26880,
+                        "stop": 27335,
+                        "delta": 455
+                    },
+                    "note": "D4",
+                    "velocity": 80,
+                    "number": 62
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 26880,
+                        "stop": 27335,
+                        "delta": 455
+                    },
+                    "note": "B4",
+                    "velocity": 80,
+                    "number": 71
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 27360,
+                        "stop": 27815,
+                        "delta": 455
+                    },
+                    "note": "D4",
+                    "velocity": 80,
+                    "number": 62
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 27360,
+                        "stop": 27815,
+                        "delta": 455
+                    },
+                    "note": "B4",
+                    "velocity": 80,
+                    "number": 71
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 27840,
+                        "stop": 28295,
+                        "delta": 455
+                    },
+                    "note": "D4",
+                    "velocity": 80,
+                    "number": 62
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 27840,
+                        "stop": 28295,
+                        "delta": 455
+                    },
+                    "note": "A4",
+                    "velocity": 80,
+                    "number": 69
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 28320,
+                        "stop": 28775,
+                        "delta": 455
+                    },
+                    "note": "D4",
+                    "velocity": 80,
+                    "number": 62
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 28320,
+                        "stop": 28775,
+                        "delta": 455
+                    },
+                    "note": "B4",
+                    "velocity": 80,
+                    "number": 71
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 28800,
+                        "stop": 29255,
+                        "delta": 455
+                    },
+                    "note": "F#4",
+                    "velocity": 80,
+                    "number": 66
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 28800,
+                        "stop": 29255,
+                        "delta": 455
+                    },
+                    "note": "C5",
+                    "velocity": 80,
+                    "number": 72
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 29280,
+                        "stop": 30191,
+                        "delta": 911
+                    },
+                    "note": "G4",
+                    "velocity": 80,
+                    "number": 67
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 29280,
+                        "stop": 30191,
+                        "delta": 911
+                    },
+                    "note": "B4",
+                    "velocity": 80,
+                    "number": 71
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 30240,
+                        "stop": 30695,
+                        "delta": 455
+                    },
+                    "note": "F#4",
+                    "velocity": 80,
+                    "number": 66
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 30240,
+                        "stop": 30695,
+                        "delta": 455
+                    },
+                    "note": "A4",
+                    "velocity": 80,
+                    "number": 69
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 30720,
+                        "stop": 31175,
+                        "delta": 455
+                    },
+                    "note": "G4",
+                    "velocity": 80,
+                    "number": 67
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 30720,
+                        "stop": 31175,
+                        "delta": 455
+                    },
+                    "note": "B4",
+                    "velocity": 80,
+                    "number": 71
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 31200,
+                        "stop": 31655,
+                        "delta": 455
+                    },
+                    "note": "C5",
+                    "velocity": 80,
+                    "number": 72
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 31200,
+                        "stop": 31427,
+                        "delta": 227
+                    },
+                    "note": "E4",
+                    "velocity": 80,
+                    "number": 64
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 31440,
+                        "stop": 31667,
+                        "delta": 227
+                    },
+                    "note": "F#4",
+                    "velocity": 80,
+                    "number": 66
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 31680,
+                        "stop": 32135,
+                        "delta": 455
+                    },
+                    "note": "B4",
+                    "velocity": 80,
+                    "number": 71
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 31680,
+                        "stop": 32135,
+                        "delta": 455
+                    },
+                    "note": "G4",
+                    "velocity": 80,
+                    "number": 67
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 32160,
+                        "stop": 32615,
+                        "delta": 455
+                    },
+                    "note": "A4",
+                    "velocity": 80,
+                    "number": 69
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 32160,
+                        "stop": 32615,
+                        "delta": 455
+                    },
+                    "note": "D4",
+                    "velocity": 80,
+                    "number": 62
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 32640,
+                        "stop": 33095,
+                        "delta": 455
+                    },
+                    "note": "G4",
+                    "velocity": 80,
+                    "number": 67
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 32640,
+                        "stop": 33095,
+                        "delta": 455
+                    },
+                    "note": "C#4",
+                    "velocity": 80,
+                    "number": 61
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 33120,
+                        "stop": 34031,
+                        "delta": 911
+                    },
+                    "note": "D4",
+                    "velocity": 80,
+                    "number": 62
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 33120,
+                        "stop": 34031,
+                        "delta": 911
+                    },
+                    "note": "F#4",
+                    "velocity": 80,
+                    "number": 66
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 34080,
+                        "stop": 34559,
+                        "delta": 479
+                    },
+                    "note": "D4",
+                    "velocity": 80,
+                    "number": 62
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 34080,
+                        "stop": 34559,
+                        "delta": 479
+                    },
+                    "note": "G4",
+                    "velocity": 80,
+                    "number": 67
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 34560,
+                        "stop": 35015,
+                        "delta": 455
+                    },
+                    "note": "E4",
+                    "velocity": 80,
+                    "number": 64
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 34560,
+                        "stop": 35015,
+                        "delta": 455
+                    },
+                    "note": "C5",
+                    "velocity": 80,
+                    "number": 72
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 35040,
+                        "stop": 35999,
+                        "delta": 959
+                    },
+                    "note": "D4",
+                    "velocity": 80,
+                    "number": 62
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 35040,
+                        "stop": 35999,
+                        "delta": 959
+                    },
+                    "note": "B4",
+                    "velocity": 80,
+                    "number": 71
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 36000,
+                        "stop": 36683,
+                        "delta": 683
+                    },
+                    "note": "C4",
+                    "velocity": 80,
+                    "number": 60
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 36000,
+                        "stop": 36683,
+                        "delta": 683
+                    },
+                    "note": "A4",
+                    "velocity": 80,
+                    "number": 69
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 36720,
+                        "stop": 36947,
+                        "delta": 227
+                    },
+                    "note": "B3",
+                    "velocity": 80,
+                    "number": 59
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 36720,
+                        "stop": 36947,
+                        "delta": 227
+                    },
+                    "note": "G4",
+                    "velocity": 80,
+                    "number": 67
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 36960,
+                        "stop": 38327,
+                        "delta": 1367
+                    },
+                    "note": "G4",
+                    "velocity": 80,
+                    "number": 67
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 36960,
+                        "stop": 38327,
+                        "delta": 1367
+                    },
+                    "note": "B3",
+                    "velocity": 80,
+                    "number": 59
+                }
+            ]
+        },
+        {
+            "header": {
+                "key": {
+                    "key": "G",
+                    "major": true
+                },
+                "instrument": 1
+            },
+            "events": [
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 0,
+                        "stop": 455,
+                        "delta": 455
+                    },
+                    "note": "G2",
+                    "velocity": 80,
+                    "number": 43
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 0,
+                        "stop": 455,
+                        "delta": 455
+                    },
+                    "note": "B3",
+                    "velocity": 80,
+                    "number": 59
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 480,
+                        "stop": 1391,
+                        "delta": 911
+                    },
+                    "note": "G2",
+                    "velocity": 80,
+                    "number": 43
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 480,
+                        "stop": 1391,
+                        "delta": 911
+                    },
+                    "note": "B3",
+                    "velocity": 80,
+                    "number": 59
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 1440,
+                        "stop": 1895,
+                        "delta": 455
+                    },
+                    "note": "B2",
+                    "velocity": 80,
+                    "number": 47
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 1440,
+                        "stop": 1895,
+                        "delta": 455
+                    },
+                    "note": "G3",
+                    "velocity": 80,
+                    "number": 55
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 1920,
+                        "stop": 2375,
+                        "delta": 455
+                    },
+                    "note": "G2",
+                    "velocity": 80,
+                    "number": 43
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 1920,
+                        "stop": 2375,
+                        "delta": 455
+                    },
+                    "note": "G3",
+                    "velocity": 80,
+                    "number": 55
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 2400,
+                        "stop": 3311,
+                        "delta": 911
+                    },
+                    "note": "D3",
+                    "velocity": 80,
+                    "number": 50
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 2400,
+                        "stop": 3311,
+                        "delta": 911
+                    },
+                    "note": "F#3",
+                    "velocity": 80,
+                    "number": 54
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 3360,
+                        "stop": 4271,
+                        "delta": 911
+                    },
+                    "note": "F#3",
+                    "velocity": 80,
+                    "number": 54
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 3360,
+                        "stop": 4271,
+                        "delta": 911
+                    },
+                    "note": "A3",
+                    "velocity": 80,
+                    "number": 57
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 4320,
+                        "stop": 4775,
+                        "delta": 455
+                    },
+                    "note": "G3",
+                    "velocity": 80,
+                    "number": 55
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 4800,
+                        "stop": 5255,
+                        "delta": 455
+                    },
+                    "note": "F#3",
+                    "velocity": 80,
+                    "number": 54
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 4800,
+                        "stop": 5255,
+                        "delta": 455
+                    },
+                    "note": "A3",
+                    "velocity": 80,
+                    "number": 57
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 5280,
+                        "stop": 5735,
+                        "delta": 455
+                    },
+                    "note": "G3",
+                    "velocity": 80,
+                    "number": 55
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 5760,
+                        "stop": 6215,
+                        "delta": 455
+                    },
+                    "note": "C3",
+                    "velocity": 80,
+                    "number": 48
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 5760,
+                        "stop": 6215,
+                        "delta": 455
+                    },
+                    "note": "G3",
+                    "velocity": 80,
+                    "number": 55
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 6240,
+                        "stop": 7151,
+                        "delta": 911
+                    },
+                    "note": "D3",
+                    "velocity": 80,
+                    "number": 50
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 6240,
+                        "stop": 7151,
+                        "delta": 911
+                    },
+                    "note": "G3",
+                    "velocity": 80,
+                    "number": 55
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 7200,
+                        "stop": 7655,
+                        "delta": 455
+                    },
+                    "note": "D3",
+                    "velocity": 80,
+                    "number": 50
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 7200,
+                        "stop": 7655,
+                        "delta": 455
+                    },
+                    "note": "F#3",
+                    "velocity": 80,
+                    "number": 54
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 7680,
+                        "stop": 8135,
+                        "delta": 455
+                    },
+                    "note": "E3",
+                    "velocity": 80,
+                    "number": 52
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 7680,
+                        "stop": 8135,
+                        "delta": 455
+                    },
+                    "note": "G3",
+                    "velocity": 80,
+                    "number": 55
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 8160,
+                        "stop": 9071,
+                        "delta": 911
+                    },
+                    "note": "E3",
+                    "velocity": 80,
+                    "number": 52
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 8160,
+                        "stop": 9071,
+                        "delta": 911
+                    },
+                    "note": "G3",
+                    "velocity": 80,
+                    "number": 55
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 9120,
+                        "stop": 9575,
+                        "delta": 455
+                    },
+                    "note": "D3",
+                    "velocity": 80,
+                    "number": 50
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 9120,
+                        "stop": 9575,
+                        "delta": 455
+                    },
+                    "note": "A3",
+                    "velocity": 80,
+                    "number": 57
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 9600,
+                        "stop": 10055,
+                        "delta": 455
+                    },
+                    "note": "A2",
+                    "velocity": 80,
+                    "number": 45
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 9600,
+                        "stop": 10055,
+                        "delta": 455
+                    },
+                    "note": "A3",
+                    "velocity": 80,
+                    "number": 57
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 10080,
+                        "stop": 10559,
+                        "delta": 479
+                    },
+                    "note": "D3",
+                    "velocity": 80,
+                    "number": 50
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 10080,
+                        "stop": 10559,
+                        "delta": 479
+                    },
+                    "note": "A3",
+                    "velocity": 80,
+                    "number": 57
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 10560,
+                        "stop": 11015,
+                        "delta": 455
+                    },
+                    "note": "B2",
+                    "velocity": 80,
+                    "number": 47
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 10560,
+                        "stop": 11015,
+                        "delta": 455
+                    },
+                    "note": "G3",
+                    "velocity": 80,
+                    "number": 55
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 11040,
+                        "stop": 11495,
+                        "delta": 455
+                    },
+                    "note": "F#2",
+                    "velocity": 80,
+                    "number": 42
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 11040,
+                        "stop": 11495,
+                        "delta": 455
+                    },
+                    "note": "F#3",
+                    "velocity": 80,
+                    "number": 54
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 11520,
+                        "stop": 11975,
+                        "delta": 455
+                    },
+                    "note": "G2",
+                    "velocity": 80,
+                    "number": 43
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 11520,
+                        "stop": 11975,
+                        "delta": 455
+                    },
+                    "note": "E3",
+                    "velocity": 80,
+                    "number": 52
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 12000,
+                        "stop": 12959,
+                        "delta": 959
+                    },
+                    "note": "A2",
+                    "velocity": 80,
+                    "number": 45
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 12000,
+                        "stop": 12959,
+                        "delta": 959
+                    },
+                    "note": "A3",
+                    "velocity": 80,
+                    "number": 57
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 12960,
+                        "stop": 13643,
+                        "delta": 683
+                    },
+                    "note": "A2",
+                    "velocity": 80,
+                    "number": 45
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 12960,
+                        "stop": 13643,
+                        "delta": 683
+                    },
+                    "note": "G3",
+                    "velocity": 80,
+                    "number": 55
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 13680,
+                        "stop": 13907,
+                        "delta": 227
+                    },
+                    "note": "D3",
+                    "velocity": 80,
+                    "number": 50
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 13680,
+                        "stop": 13907,
+                        "delta": 227
+                    },
+                    "note": "F#3",
+                    "velocity": 80,
+                    "number": 54
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 13920,
+                        "stop": 15287,
+                        "delta": 1367
+                    },
+                    "note": "D3",
+                    "velocity": 80,
+                    "number": 50
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 13920,
+                        "stop": 15287,
+                        "delta": 1367
+                    },
+                    "note": "F#3",
+                    "velocity": 80,
+                    "number": 54
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 15840,
+                        "stop": 16751,
+                        "delta": 911
+                    },
+                    "note": "B3",
+                    "velocity": 80,
+                    "number": 59
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 16800,
+                        "stop": 17255,
+                        "delta": 455
+                    },
+                    "note": "A3",
+                    "velocity": 80,
+                    "number": 57
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 16800,
+                        "stop": 17255,
+                        "delta": 455
+                    },
+                    "note": "C4",
+                    "velocity": 80,
+                    "number": 60
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 17280,
+                        "stop": 17735,
+                        "delta": 455
+                    },
+                    "note": "G3",
+                    "velocity": 80,
+                    "number": 55
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 17280,
+                        "stop": 17735,
+                        "delta": 455
+                    },
+                    "note": "D4",
+                    "velocity": 80,
+                    "number": 62
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 17760,
+                        "stop": 18719,
+                        "delta": 959
+                    },
+                    "note": "A3",
+                    "velocity": 80,
+                    "number": 57
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 17760,
+                        "stop": 18719,
+                        "delta": 959
+                    },
+                    "note": "C4",
+                    "velocity": 80,
+                    "number": 60
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 18720,
+                        "stop": 19631,
+                        "delta": 911
+                    },
+                    "note": "G3",
+                    "velocity": 80,
+                    "number": 55
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 18720,
+                        "stop": 19631,
+                        "delta": 911
+                    },
+                    "note": "D4",
+                    "velocity": 80,
+                    "number": 62
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 19680,
+                        "stop": 20135,
+                        "delta": 455
+                    },
+                    "note": "F#3",
+                    "velocity": 80,
+                    "number": 54
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 19680,
+                        "stop": 20135,
+                        "delta": 455
+                    },
+                    "note": "A3",
+                    "velocity": 80,
+                    "number": 57
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 20160,
+                        "stop": 20615,
+                        "delta": 455
+                    },
+                    "note": "G3",
+                    "velocity": 80,
+                    "number": 55
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 20640,
+                        "stop": 21095,
+                        "delta": 455
+                    },
+                    "note": "E3",
+                    "velocity": 80,
+                    "number": 52
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 20640,
+                        "stop": 21095,
+                        "delta": 455
+                    },
+                    "note": "B3",
+                    "velocity": 80,
+                    "number": 59
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 21120,
+                        "stop": 21575,
+                        "delta": 455
+                    },
+                    "note": "C3",
+                    "velocity": 80,
+                    "number": 48
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 21120,
+                        "stop": 21575,
+                        "delta": 455
+                    },
+                    "note": "C4",
+                    "velocity": 80,
+                    "number": 60
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 21600,
+                        "stop": 22319,
+                        "delta": 719
+                    },
+                    "note": "A3",
+                    "velocity": 80,
+                    "number": 57
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 21600,
+                        "stop": 22559,
+                        "delta": 959
+                    },
+                    "note": "D3",
+                    "velocity": 80,
+                    "number": 50
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 22320,
+                        "stop": 22547,
+                        "delta": 227
+                    },
+                    "note": "G3",
+                    "velocity": 80,
+                    "number": 55
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 22560,
+                        "stop": 23015,
+                        "delta": 455
+                    },
+                    "note": "F#3",
+                    "velocity": 80,
+                    "number": 54
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 22560,
+                        "stop": 23015,
+                        "delta": 455
+                    },
+                    "note": "D3",
+                    "velocity": 80,
+                    "number": 50
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 23040,
+                        "stop": 23495,
+                        "delta": 455
+                    },
+                    "note": "B3",
+                    "velocity": 80,
+                    "number": 59
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 23520,
+                        "stop": 23975,
+                        "delta": 455
+                    },
+                    "note": "B3",
+                    "velocity": 80,
+                    "number": 59
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 24000,
+                        "stop": 24455,
+                        "delta": 455
+                    },
+                    "note": "A3",
+                    "velocity": 80,
+                    "number": 57
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 24480,
+                        "stop": 24935,
+                        "delta": 455
+                    },
+                    "note": "B3",
+                    "velocity": 80,
+                    "number": 59
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 24960,
+                        "stop": 25415,
+                        "delta": 455
+                    },
+                    "note": "C4",
+                    "velocity": 80,
+                    "number": 60
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 25440,
+                        "stop": 26351,
+                        "delta": 911
+                    },
+                    "note": "B3",
+                    "velocity": 80,
+                    "number": 59
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 26400,
+                        "stop": 26855,
+                        "delta": 455
+                    },
+                    "note": "B3",
+                    "velocity": 80,
+                    "number": 59
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 26880,
+                        "stop": 27335,
+                        "delta": 455
+                    },
+                    "note": "G3",
+                    "velocity": 80,
+                    "number": 55
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 27360,
+                        "stop": 27815,
+                        "delta": 455
+                    },
+                    "note": "G3",
+                    "velocity": 80,
+                    "number": 55
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 27840,
+                        "stop": 28295,
+                        "delta": 455
+                    },
+                    "note": "F#3",
+                    "velocity": 80,
+                    "number": 54
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 28320,
+                        "stop": 28775,
+                        "delta": 455
+                    },
+                    "note": "G3",
+                    "velocity": 80,
+                    "number": 55
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 28800,
+                        "stop": 29255,
+                        "delta": 455
+                    },
+                    "note": "A3",
+                    "velocity": 80,
+                    "number": 57
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 29280,
+                        "stop": 29759,
+                        "delta": 479
+                    },
+                    "note": "G3",
+                    "velocity": 80,
+                    "number": 55
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 29760,
+                        "stop": 30215,
+                        "delta": 455
+                    },
+                    "note": "B3",
+                    "velocity": 80,
+                    "number": 59
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 30240,
+                        "stop": 30695,
+                        "delta": 455
+                    },
+                    "note": "D4",
+                    "velocity": 80,
+                    "number": 62
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 30720,
+                        "stop": 31175,
+                        "delta": 455
+                    },
+                    "note": "D4",
+                    "velocity": 80,
+                    "number": 62
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 30720,
+                        "stop": 31175,
+                        "delta": 455
+                    },
+                    "note": "G3",
+                    "velocity": 80,
+                    "number": 55
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 31200,
+                        "stop": 31655,
+                        "delta": 455
+                    },
+                    "note": "A3",
+                    "velocity": 80,
+                    "number": 57
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 31200,
+                        "stop": 31655,
+                        "delta": 455
+                    },
+                    "note": "C4",
+                    "velocity": 80,
+                    "number": 60
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 31680,
+                        "stop": 32135,
+                        "delta": 455
+                    },
+                    "note": "G3",
+                    "velocity": 80,
+                    "number": 55
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 31680,
+                        "stop": 32135,
+                        "delta": 455
+                    },
+                    "note": "D4",
+                    "velocity": 80,
+                    "number": 62
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 32160,
+                        "stop": 32615,
+                        "delta": 455
+                    },
+                    "note": "F#3",
+                    "velocity": 80,
+                    "number": 54
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 32160,
+                        "stop": 32615,
+                        "delta": 455
+                    },
+                    "note": "A3",
+                    "velocity": 80,
+                    "number": 57
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 32640,
+                        "stop": 33095,
+                        "delta": 455
+                    },
+                    "note": "E3",
+                    "velocity": 80,
+                    "number": 52
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 32640,
+                        "stop": 33095,
+                        "delta": 455
+                    },
+                    "note": "A3",
+                    "velocity": 80,
+                    "number": 57
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 33120,
+                        "stop": 34079,
+                        "delta": 959
+                    },
+                    "note": "A3",
+                    "velocity": 80,
+                    "number": 57
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 33120,
+                        "stop": 33599,
+                        "delta": 479
+                    },
+                    "note": "D3",
+                    "velocity": 80,
+                    "number": 50
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 33600,
+                        "stop": 34055,
+                        "delta": 455
+                    },
+                    "note": "C3",
+                    "velocity": 80,
+                    "number": 48
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 34080,
+                        "stop": 35039,
+                        "delta": 959
+                    },
+                    "note": "G3",
+                    "velocity": 80,
+                    "number": 55
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 34080,
+                        "stop": 34559,
+                        "delta": 479
+                    },
+                    "note": "B2",
+                    "velocity": 80,
+                    "number": 47
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 34560,
+                        "stop": 35015,
+                        "delta": 455
+                    },
+                    "note": "C3",
+                    "velocity": 80,
+                    "number": 48
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 35040,
+                        "stop": 35999,
+                        "delta": 959
+                    },
+                    "note": "D3",
+                    "velocity": 80,
+                    "number": 50
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 35040,
+                        "stop": 35999,
+                        "delta": 959
+                    },
+                    "note": "G3",
+                    "velocity": 80,
+                    "number": 55
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 36000,
+                        "stop": 36683,
+                        "delta": 683
+                    },
+                    "note": "D3",
+                    "velocity": 80,
+                    "number": 50
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 36000,
+                        "stop": 36683,
+                        "delta": 683
+                    },
+                    "note": "F#3",
+                    "velocity": 80,
+                    "number": 54
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 36720,
+                        "stop": 36947,
+                        "delta": 227
+                    },
+                    "note": "G2",
+                    "velocity": 80,
+                    "number": 43
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 36720,
+                        "stop": 36947,
+                        "delta": 227
+                    },
+                    "note": "G3",
+                    "velocity": 80,
+                    "number": 55
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 36960,
+                        "stop": 38327,
+                        "delta": 1367
+                    },
+                    "note": "G2",
+                    "velocity": 80,
+                    "number": 43
+                },
+                {
+                    "type": 9,
+                    "channel": 1,
+                    "time": {
+                        "start": 36960,
+                        "stop": 38327,
+                        "delta": 1367
+                    },
+                    "note": "G3",
+                    "velocity": 80,
+                    "number": 55
+                }
+            ]
+        }
+    ]
+}

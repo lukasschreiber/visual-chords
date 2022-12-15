@@ -18,3 +18,13 @@
     font-weight: 600;
     margin: 0px 1px;
 }
+
+.song {
+    color: #651f05;
+    background-color: #ff5d0b;
+    padding: 5px 5px 4px;
+    border-radius: 7px;
+    font-size: 0.9em;
+    font-weight: 600;
+    margin: 0px 1px;
+}

@@ -3,9 +3,9 @@ import { formatNote, formatNumber, Formats } from "./formatters.js";
 
 export const getAlternativeNoteNames = (note) => {
     switch (note) {
-        case "C": return ["C", "Dbb"];
-        case "H": return ["B", "Cb", "Ax"];
-        case "B": return ["A#", "Bb"];
+        case "C": return ["C", "Dbb", "Bs"];
+        case "B": return ["B", "Cb", "Ax"];
+        case "A#": return ["A#", "Bb"];
         case "A": return ["A", "Bbb", "Gx"];
         case "G#": return ["G#", "Ab"];
         case "G": return ["G", "Abb", "Fx"];
