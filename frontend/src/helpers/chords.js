@@ -19,6 +19,28 @@ export const getAlternativeNoteNames = (note) => {
     }
 };
 
+export const translateSharpToFlat = (note) => {
+    const notes = ["C", "D", "E", "F", "G", "A", "H"];
+    const octave = note.match(/\d+$/g)[0];
+    const pitch = notes.indexOf(note.match(/^[A-H]/g)[0]);
+    if(note.match(/#/g)){
+        note = notes[pitch + 1 < notes.length ? pitch + 1 : 0] + "b" + octave;
+    }
+
+    return note;
+}
+
+export const translateFlatToSharp = (note) => {
+    const notes = ["C", "D", "E", "F", "G", "A", "H"];
+    const octave = note.match(/\d+$/g)[0];
+    const pitch = notes.indexOf(note.match(/^[A-H]/g)[0]);
+    if(note.match(/b/g)){
+        note = notes[pitch - 1 >= 0 ? pitch - 1 : notes.length - 1] + "#" + octave;
+    }
+
+    return note;
+}
+
 const perms = (head, tail) => {
     const permutations = [];
     for (let note of head) {

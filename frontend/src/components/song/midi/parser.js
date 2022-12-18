@@ -4,11 +4,11 @@ const base64ToHex = (str) => {
     const raw = atob(str);
     let result = '';
     for (let i = 0; i < raw.length; i++) {
-      const hex = raw.charCodeAt(i).toString(16);
-      result += (hex.length === 2 ? hex : '0' + hex);
+        const hex = raw.charCodeAt(i).toString(16);
+        result += (hex.length === 2 ? hex : '0' + hex);
     }
     return result.toUpperCase();
-  }
+};
 
 const readChunk = (bytes, offset = 0) => {
     const type = bytes.slice(offset + 0, offset + 4).map(byte => String.fromCharCode(Number.parseInt(byte, 16))).join("");
@@ -185,6 +185,7 @@ const readMidiMessage = (bytes, carriedStatus) => {
         case 12: data = readProgramChange(data); break;
         case 11: data = readControlChange(data); break;
         case 9: data = readNoteOn(data); break;
+        case 8: data = readNoteOn(data); break;
         default:
     }
 
@@ -279,7 +280,7 @@ export default function parseMIDI(base64) {
         if (chunk.type === "MTrk") tracks.push(readTrack(chunk.data));
         offset = chunk.nextChunk;
     }
-    
+
     //raise timing information to header
     const tempi = tracks.filter(track => track.header.tempo.secondsPerQuarter !== null).map(
         track => {
@@ -292,8 +293,19 @@ export default function parseMIDI(base64) {
         }
     );
     
+    if (tempi.length === 0) {
+        tempi.push({
+            microsecondsPerQuarter: 666667,
+            secondsPerQuarter: 0.666667,
+            ticksPerQuarter: 480,
+            BPM: 89.9999550000225,
+            microsecondsPerTick: 1388.8895833333333,
+            secondsPerTick: 0.0013888895833333334
+        });
+    }
+
     let lastInstrument = null;
-    
+
     tracks = tracks.map(track => {
         const instrument = track.events.find(event => event.type === 12)?.instrument || lastInstrument;
         const channel = track.events.find(event => event.type === 9)?.channel;
@@ -305,31 +317,31 @@ export default function parseMIDI(base64) {
                 let correspondingKeyRelease = null;
                 let lookAhead = index + 1;
                 while (correspondingKeyRelease === null && lookAhead < array.length) {
-                    if (array[lookAhead].type === 9 && array[lookAhead].number === event.number && array[lookAhead].velocity === 0) {
+                    if ((array[lookAhead].type === 9 || array[lookAhead].type === 8) && array[lookAhead].number === event.number && array[lookAhead].velocity === 0) {
                         correspondingKeyRelease = array[lookAhead];
                         break;
                     }
                     lookAhead++;
                 }
-    
+
                 event.time["stop"] = correspondingKeyRelease.time.start;
                 event.time["delta"] = event.time.stop - event.time.start;
             }
-    
+
             return event;
         }).filter(event => event.type === 9 && event.velocity > 0);
         return track;
     }).filter(track => track.events.length > 0);
-    
+
     for (let track of tracks) {
         delete track.header.tempo;
     }
-    
+
     const decoratedHeader = {
         numberOfTracks: header.numberOfTracks,
         tempo: tempi
     };
-    
+
     return {
         header: decoratedHeader,
         tracks

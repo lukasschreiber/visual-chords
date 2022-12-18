@@ -1,3 +1,7 @@
+.piano {
+  overflow-x: auto;
+}
+
 ul {
   height: 8em;
   width: 35em;
@@ -61,13 +65,13 @@ ul li:last-child {
 }
 
 ul li.active {
-  background: linear-gradient(to bottom, #5fd800 0%, #6ffe00 100%);
-  box-shadow: -1px 0 0 rgba(255, 255, 255, 0.8) inset, 0 0 5px #5fd800 inset, 0 0 3px rgba(0, 0, 0, 0.2);
+  --color: #5fd800;
+  background: linear-gradient(to bottom, var(--color) 0%, var(--color)  100%);
+  box-shadow: -1px 0 0 rgba(255, 255, 255, 0.8) inset, 0 0 5px var(--color) inset, 0 0 3px rgba(0, 0, 0, 0.2);
 }
 
 ul li.active.first {
-  background: linear-gradient(to bottom, #bd2123 0%, #e3272a 100%);
-  box-shadow: -1px 0 0 rgba(255, 255, 255, 0.8) inset, 0 0 5px #bd2123 inset, 0 0 3px rgba(0, 0, 0, 0.2);
+  --color: #bd2123;
 }
 
 .fade {

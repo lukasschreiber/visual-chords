@@ -4,13 +4,12 @@ import PlayChord from "./PlayChord";
 import Select from "react-select";
 
 import "./Chord.css";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { formatNote, Formats } from "../helpers/formatters.js";
 import Description from "./ChordDescription";
 
 export default function Chord(props) {
     const [inversion, setInversion] = useState(props.chord.selectedInversion);
-    const pianoRef = useRef();
 
     const handleInversionChange = (e) => {
         setInversion(e.value);
@@ -45,11 +44,11 @@ export default function Chord(props) {
                 <Notation tones={notes} />
                 <Notation tones={notes} octave={notes.length > 5 ? 2 : 3} />
             </div>
-            <Piano tones={notes} keynote={props.chord.notes[0]} reference={pianoRef} />
+            <Piano staticTones={notes} keynote={props.chord.notes[0]} />
             <div className="audio">
-                <PlayChord tones={notes} piano={pianoRef} sequence instrument="acoustic_grand_piano" icon="piano" />
+                <PlayChord tones={notes} sequence instrument="acoustic_grand_piano" icon="piano" />
                 <PlayChord tones={notes} instrument="marimba" icon="xylophone" />
-                <PlayChord tones={notes} piano={pianoRef} sequence nochord octave={2} instrument="tuba" icon="tuba" />
+                <PlayChord tones={notes} sequence nochord octave={2} instrument="tuba" icon="tuba" />
                 <PlayChord tones={notes} sequence instrument="acoustic_guitar_nylon" icon="guitar" />
                 <PlayChord tones={notes} sequence instrument="banjo" icon="banjo" />
                 <PlayChord tones={notes} sequence instrument="accordion" icon="accordion" />
@@ -65,7 +64,7 @@ export default function Chord(props) {
                 <PlayChord tones={notes} sequence instrument="orchestral_harp" icon="harp" />
                 <PlayChord tones={notes} sequence nochord instrument="pan_flute" icon="pan_flute" />
                 <PlayChord tones={notes} sequence nochord instrument="alto_sax" icon="saxophone" />
-                <PlayChord tones={notes} piano={pianoRef} sequence instrument="church_organ" icon="keyboard" />
+                <PlayChord tones={notes} sequence instrument="church_organ" icon="keyboard" />
             </div>
         </div>
     );

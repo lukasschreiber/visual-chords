@@ -1,5 +1,5 @@
-import Soundfont from "soundfont-player";
 import { formatNote, Formats } from "../helpers/formatters.js";
+import { Player } from "./song/midi/player.js";
 
 export default function PlayChord(props) {
 
@@ -23,18 +23,16 @@ export default function PlayChord(props) {
     };
 
     const handleClick = (e) => {
-        //https://github.com/danigb/soundfont-player
         const context = new AudioContext();
-        Soundfont.instrument(context, props.instrument || 'acoustic_grand_piano').then(function (piano) {
-            let tones = getTones(props.tones);
+        const tones = getTones(props.tones);
+        Player.instrument(context, props.instrument || 'acoustic_grand_piano', {notes: tones}).then(instrument => {
             const schedule = [];
-            let duration = 0;
+            const start = context.currentTime;
 
             if (props.sequence) {
-                duration += tones.length;
                 schedule.push(...tones.map((tone, i) => {
                     return {
-                        time: i,
+                        time: start + i,
                         note: tone,
                         duration: 1
                     };
@@ -42,8 +40,7 @@ export default function PlayChord(props) {
             }
 
             if (!props.sequence || (props.sequence && !props.nochord)) {
-                duration += 2;
-                let lastTone = Math.max(...schedule.map(n => n.time)) || -1;
+                let lastTone = Math.max(...schedule.map(n => n.time)) !== -Infinity ? Math.max(...schedule.map(n => n.time)) : start - 1;
                 schedule.push(...tones.map(tone => {
                     return {
                         time: lastTone + 1,
@@ -53,47 +50,7 @@ export default function PlayChord(props) {
                 }));
             }
 
-            let playedNotes = [];
-
-            piano.on("start", (time, note, data) => {
-                if (props.piano) {
-
-                    renderPianoKeys(time, data);
-
-                    // cleanup
-                    setTimeout(() => {
-                        props.piano.current.querySelectorAll(".active").forEach(key => key.innerHTML = "");
-                    }, duration * 1000);
-                }
-            });
-
-            const renderPianoKeys = (time, data) => {
-                setTimeout(() => {
-                    playedNotes.push(data.note);
-                    setTimeout(() => {
-                        playedNotes = playedNotes.filter(n => n !== data.note);
-                    }, data.duration * 1000 - 50);
-
-                    const highlightedKeys = props.piano.current.querySelectorAll(".active");
-                    for (let key of highlightedKeys) {
-                        const note = playedNotes.find(note => key.classList.contains(formatNote(note, Formats.NORMALIZED_NO_OCTAVE)));
-                        if (note) {
-                            key.innerHTML = formatNote(note, Formats.MUSICAL_NO_OCTAVE);
-                            key.classList.add("fade");
-                            setTimeout(() => {
-                                key.classList.remove("fade");
-                                key.classList.add("fadeout");
-                            }, data.duration * 1000 - 500);
-                            setTimeout(() => {
-                                key.classList.remove("fadeout");
-                            }, data.duration * 1000);
-                        }
-                        if (!note) key.innerHTML = "";
-                    }
-                }, time * 1000);              
-            };
-
-            piano.schedule(context.currentTime, schedule);
+            instrument.schedule(schedule)
         });
 
     };
