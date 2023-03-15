@@ -39,7 +39,7 @@ const play = (context, buffer, velocity, time, duration, options = {}) => {
     gain.connect(context.destination);
     source.start(time);
 
-    source.stop(duration + time + 0.08);
+    source.stop(duration + time + 0.03);
     return {
         stop: (stop = 0) => source.stop(stop)
     };
@@ -54,18 +54,18 @@ const play = (context, buffer, velocity, time, duration, options = {}) => {
  * @returns 
  */
 const schedule = (context, buffers, notes, options) => {
-    console.log("test")
-    const lookAhead = 4;
-    const buffer = 4; // seems to have issues if lookAhead !== buffer
+    const lookAhead = 3;
+    const buffer = 3; // seems to have issues if lookAhead !== buffer
 
     const scheduleBins = [];
 
+    // makes problems if last bin only contains one element
     for (let i = 0; i < Math.ceil(notes[notes.length - 1].time); i += lookAhead) {
         scheduleBins.push(notes.filter(note => note.time >= i && note.time < i + lookAhead));
     }
 
     for (let i = 0; i < scheduleBins.length; i++) {
-        let scheduleTime = (i*lookAhead - buffer < 0 ? 0 : i*lookAhead - buffer) * 1000;
+        let scheduleTime = (i * lookAhead - buffer < 0 ? 0 : i * lookAhead - buffer) * 1000;
         let schedule = scheduleBins[i];
 
         setTimeout(() => {
@@ -75,7 +75,7 @@ const schedule = (context, buffers, notes, options) => {
         }, scheduleTime);
     }
 
-    if(typeof options.onScheduled === "function") options.onScheduled(notes);
+    if (typeof options.onScheduled === "function") options.onScheduled(notes);
 
     return {
 
@@ -98,6 +98,8 @@ const instrument = async (context, instrument, options = {}) => {
     const bufferKeys = [];
     const buffers = {};
 
+    if (options.notes) options.notes = options.notes.map(translateFlatToSharp);
+
     for (let note in soundfont) {
         if (!options.notes || options.notes.includes(note)) {
             bufferKeys.push(note);
@@ -110,8 +112,13 @@ const instrument = async (context, instrument, options = {}) => {
     }
 
     return {
-        play: (note, time = 0, duration = 3, velocity = 80) => play(context, buffers[note], velocity, time, duration, options),
-        schedule: (notes) => schedule(context, buffers, notes, options),
+        play: (note, time = 0, duration = 3, velocity = 80) => play(context, buffers[translateFlatToSharp(note)], velocity, time, duration, options),
+        schedule: (notes) => schedule(context, buffers, notes.map(note => {
+            return {
+                ...note,
+                note: translateFlatToSharp(note.note)
+            };
+        }), options),
         name: instrument
     };
 };

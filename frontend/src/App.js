@@ -184,7 +184,7 @@ function App() {
       <div className="previewWrapper">
         {!presentedResult && restOfResults.length === 0 ? "Nothing" : ""}
         {presentedResult ? (mode === "Song") ? <Song name={presentedResult.name} />: <Chord chord={presentedResult} /> : ""}
-        {restOfResults.length > 0 ? restOfResults.map(result => <LazyChordPreview chord={result} onClick={handlePreviewClick} />) : ""}
+        {restOfResults.length > 0 ? restOfResults.map(result => <LazyChordPreview key={result.name} chord={result} onClick={handlePreviewClick} />) : ""}
       </div>
     </div>
   );

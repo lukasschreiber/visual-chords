@@ -20,7 +20,7 @@ export const getAlternativeNoteNames = (note) => {
 };
 
 export const translateSharpToFlat = (note) => {
-    const notes = ["C", "D", "E", "F", "G", "A", "H"];
+    const notes = ["C", "D", "E", "F", "G", "A", "B"];
     const octave = note.match(/\d+$/g)[0];
     const pitch = notes.indexOf(note.match(/^[A-H]/g)[0]);
     if(note.match(/#/g)){
@@ -31,7 +31,7 @@ export const translateSharpToFlat = (note) => {
 }
 
 export const translateFlatToSharp = (note) => {
-    const notes = ["C", "D", "E", "F", "G", "A", "H"];
+    const notes = ["C", "D", "E", "F", "G", "A", "B"];
     const octave = note.match(/\d+$/g)[0];
     const pitch = notes.indexOf(note.match(/^[A-H]/g)[0]);
     if(note.match(/b/g)){

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { getAlternativeNoteNames } from "../helpers/chords.js";
 import { formatNote, Formats } from "../helpers/formatters.js";
 import "./Piano.css";
@@ -7,6 +7,7 @@ export default function Piano(props) {
     const ownRef = useRef();
     const animationReference = useRef();
     const previousTimeReference = useRef();
+    const previousKeys = useRef();
 
     const ref = props.reference || ownRef;
     const from = props.from || "G3";
@@ -45,11 +46,11 @@ export default function Piano(props) {
 
                 const keysToHighlightPerChannel = [];
                 for (let channel of props.tones) {
-                    const keysToHighlight = channel.notes.filter(note => (note.time <= (startTime - 100) / 1000) && ((startTime - delta) / 1000 <= note.duration + note.time));
+                    const keysToHighlight = channel.notes.filter(note => !note.time || ((note.time <= (startTime - 100) / 1000) && ((startTime - delta) / 1000 <= note.duration + note.time)));
                     keysToHighlightPerChannel.push({channel: channel.channel, notes: keysToHighlight});
                 }
 
-                highlightKeys(keysToHighlightPerChannel)
+                highlightKeys(keysToHighlightPerChannel, props.keynote)
             }
         }
 
@@ -63,7 +64,7 @@ export default function Piano(props) {
     }, [props.tones]);
 
     const highlightKeys = (keysToHighlight, keynote = null) => {
-        let pianoKeys = ref.current.querySelectorAll("li");
+        let pianoKeys = ref.current?.querySelectorAll("li");
 
         const colors = ["#5fd800", "pink", "blue", "red"]
 
@@ -76,6 +77,9 @@ export default function Piano(props) {
                 octave: tone.note.match(/[0-9]\b/g) ? Number.parseInt(tone.note.match(/[0-9]\b/g)[0]) : null
             };
         });
+
+        // do not change anything if there are no changes to make
+        if(JSON.stringify(keysToHighlight) === JSON.stringify(previousKeys.current)) return;
 
         for (let key of pianoKeys) {
             key.classList.remove("active");
@@ -107,16 +111,14 @@ export default function Piano(props) {
             pianoKey?.style.setProperty("--color", key.color);
             if (props.names === "highlighted" && pianoKey) pianoKey.innerHTML = formatNote(key.key, Formats.MUSICAL);
         }
-    }
 
-    useEffect(() => {
-        // highlightKeys(props.tones, props.keynote)
-    }, [props.tones, props.keynote, ref, props.names]);
+        previousKeys.current = keysToHighlight;
+    }
 
     return (
         <div className="piano">
             <ul className="set" ref={ref} style={{ width: `calc(${keys.filter(key => key.white).reduce((acc, v) => acc += 2, 0)}em + ${keys.filter(key => key.white).reduce((acc, v) => acc += 2.5, 0)}px)` }}>
-                {keys.map(key => <li className={`${key.white ? "white" : "black"} ${key.names.join(" ")} O${key.octave}`}>{props.names === "all" ? formatNote(key.key, Formats.MUSICAL) : ""}</li>)}
+                {keys.map(key => <li key={key.names[0]+key.octave} className={`${key.white ? "white" : "black"} ${key.names.join(" ")} O${key.octave}`}>{props.names === "all" ? formatNote(key.key, Formats.MUSICAL) : ""}</li>)}
             </ul>
         </div>
     );

@@ -25,7 +25,8 @@ export default function PlaySong(props) {
             const instrumentChannels = [];
             for (let instrument of instrumentsInScore) {
                 const notes = Array.from(new Set(score.tracks.filter(track => track.header.channel === instrument.channel).flatMap(track => track.events.map(event => event.note))));
-                loadInstruments.push(Player.instrument(context, instrument.instrument, { gain: instrument.gain || 1, notes, onScheduled: (notes)=>handleScheduling(notes, instrument.channel) })); // {notes: ["C4", "Eb4", "G4"]}
+                // removed notes
+                loadInstruments.push(Player.instrument(context, instrument.instrument, { gain: instrument.gain || 1, onScheduled: (notes)=>handleScheduling(notes, instrument.channel) })); // {notes: ["C4", "Eb4", "G4"]}
                 instrumentChannels.push(instrument.channel);
             }
             if (!active) { return; }
@@ -69,29 +70,3 @@ export default function PlaySong(props) {
         </>
     );
 }
-
-// const renderPianoKeys = (time, data) => {
-//     setTimeout(() => {
-//         playedNotes.push(data.note);
-//         setTimeout(() => {
-//             playedNotes = playedNotes.filter(n => n !== data.note);
-//         }, data.duration * 1000 - 50);
-
-//         const highlightedKeys = props.piano.current.querySelectorAll(".active");
-//         for (let key of highlightedKeys) {
-//             const note = playedNotes.find(note => key.classList.contains(formatNote(note, Formats.NORMALIZED_NO_OCTAVE)));
-//             if (note) {
-//                 key.innerHTML = formatNote(note, Formats.MUSICAL_NO_OCTAVE);
-//                 key.classList.add("fade");
-//                 setTimeout(() => {
-//                     key.classList.remove("fade");
-//                     key.classList.add("fadeout");
-//                 }, data.duration * 1000 - 500);
-//                 setTimeout(() => {
-//                     key.classList.remove("fadeout");
-//                 }, data.duration * 1000);
-//             }
-//             if (!note) key.innerHTML = "";
-//         }
-//     }, time * 1000);
-// };

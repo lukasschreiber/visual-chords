@@ -44,7 +44,7 @@ export default function Chord(props) {
                 <Notation tones={notes} />
                 <Notation tones={notes} octave={notes.length > 5 ? 2 : 3} />
             </div>
-            <Piano staticTones={notes} keynote={props.chord.notes[0]} />
+            <Piano tones={[{channel: 0, notes: notes.map(note => {return {note}})}]} keynote={props.chord.notes[0]} names="highlighted" />
             <div className="audio">
                 <PlayChord tones={notes} sequence instrument="acoustic_grand_piano" icon="piano" />
                 <PlayChord tones={notes} instrument="marimba" icon="xylophone" />

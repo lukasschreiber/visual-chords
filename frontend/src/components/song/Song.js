@@ -13,7 +13,7 @@ export default function Song(props) {
                 <h1>{props.name}</h1>
             </div>
             <Piano from="C2" to="C6" tones={notes} names="highlighted" />
-            <PlaySong name="last_christmas" onSchedule={(notes, channel) => {setNotes(state => [...state, {channel, notes}])}}/>
+            <PlaySong name="feliz_navidad" onSchedule={(notes, channel) => {setNotes(state => [...state, {channel, notes}])}}/>
         </div>
     );
 }
